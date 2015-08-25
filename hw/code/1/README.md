@@ -8,16 +8,23 @@ CSC 591 - Automated Software Engineering
 
 2. Output of commands
     python --version
+    <br/>
     ![python-version](version.png)
-
+    <br/>
     pip -help
+    <br/>
     ![pip-help](piphelp.png)
-    
+    <br/>
     easy_install -h
+    <br/>
     ![easyinstall-h](easyinstall.png)
-  
+    <br/>
+
 3. Screen shot of IDE
+    <br/>
     ![ide](pycharm.png)
+    <br/>
 
 4. Output of okok
+    <br/>
     ![okok](okokoutput.png)
