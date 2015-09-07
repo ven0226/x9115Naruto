@@ -34,3 +34,5 @@ def grid(rows,cols):
             print "-",
         print "+",
     print
+
+grid(3,2)
