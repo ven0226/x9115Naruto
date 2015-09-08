@@ -84,7 +84,7 @@ def circle(t, r):
 # or being imported, in which case don't.
 
 if __name__ == '__main__':
-    world = TurtleWorld()    
+    world = TurtleWorld()
 
     bob = Turtle()
     bob.delay = 0.001

@@ -1,3 +1,13 @@
+#repeat_lyrics()
+
+def repeat_lyrics():
+    print_lyrics()
+    print_lyrics()
+
+def print_lyrics():
+    print "I'm a lumberjack, and I'm okay."
+    print "I sleep all night and I work all day."
+
 def right_justify(s):
     rwidth = 70
     print s.rjust(rwidth)
@@ -34,5 +44,3 @@ def grid(rows,cols):
             print "-",
         print "+",
     print
-
-grid(3,2)
