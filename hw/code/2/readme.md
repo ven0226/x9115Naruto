@@ -18,11 +18,10 @@ CSC 591 - Automated Software Engineering
 
 * Use the modified version of do_twice to call print_twice twice, passing 'spam' as an argument.
 <br/>
-![Exercise 3.4](./imgs/toplevel.png)
 
 * Define a new function called do_four that takes a function object and a value and calls the function four times, passing the value as a parameter. There should be only two statements in the body of this function, not four.
 <br/>
-![Exercise 3.4_2](./imgs/toplevel.png)
+![Exercise 3.4_2](./imgs/Ex3_4.png)
 
 5.
 
