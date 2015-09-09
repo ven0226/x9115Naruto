@@ -70,6 +70,18 @@ def arc(t, r, angle):
     rt(t, step_angle/2)
 
 
+def arc(turtleParam, r, angle):
+
+    arclen = 2 * math.pi * r * angle / 360
+    n = int(arclen / 4) + 1
+    steplen = arclen / n
+    stepangle = float(angle) / n
+
+    for i in range(n):
+        fd(turtleParam, steplen)
+        lt(turtleParam, stepangle)
+
+
 def circle(t, r):
     """Draws a circle with the given radius.
 
@@ -88,13 +100,14 @@ if __name__ == '__main__':
 
     bob = Turtle()
     bob.delay = 0.001
-
+    arc(bob,50,90)
     # draw a circle centered on the origin
+    '''
     radius = 100
     pu(bob)
     fd(bob, radius)
     lt(bob)
     pd(bob)
     circle(bob, radius)
-
+    '''
     wait_for_user()
