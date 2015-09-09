@@ -12,16 +12,19 @@ def right_justify(s):
     rwidth = 70
     print s.rjust(rwidth)
 
-def do_twice(f,val):
-    f(val)
-    f(val)
+def print_once(s):
+    print s
 
-def do_four(f,val):
-    do_twice(f,val)
-    do_twice(f,val)
-
-def print_spam(val):
-    print val
+def print_twice(s):
+    print s+"\n"+s
+    
+def do_twice(f,s):
+    f(s)
+    f(s)
+    
+def do_four(f,s):
+    f(print_once,s)
+    f(print_once,s)
 
 def grid(rows,cols):
     for i in range(0,rows):
@@ -45,4 +48,7 @@ def grid(rows,cols):
         print "+",
     print
 
-grid(4,4)
+#print right_justify('bash')
+#do_twice(print_twice, 'do_twice_spam')
+#do_four(do_twice,'do_four_spam')
+#grid(4,4)
