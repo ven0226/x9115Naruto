@@ -37,16 +37,16 @@ Code for exercise 3 is in [think3.py](./think3.py)
 
 ### Exercise 4
 
-Code for exercise 3 is in [think4.py](./think4.py)
+Code for exercise 4 is in [think4.py](./think4.py)
 
 2. Images of turtle flowers:
 
-![Exercise 4.2.1](./imgs/421.png) <br/>
-![Exercise 4.2.2](./imgs/422.png) <br/>
+![Exercise 4.2.1](./imgs/421.png)
+![Exercise 4.2.2](./imgs/422.png)
 ![Exercise 4.2.2](./imgs/423.png) <br/>
 
 3. Images of turtle pies:
 
-![Exercise 4.3.1](./imgs/431.png) <br/>
-![Exercise 4.3.2](./imgs/432.png) <br/>
+![Exercise 4.3.1](./imgs/431.png)
+![Exercise 4.3.2](./imgs/432.png)
 ![Exercise 4.3.2](./imgs/433.png) <br/>
