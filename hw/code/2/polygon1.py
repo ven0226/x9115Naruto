@@ -51,25 +51,6 @@ def polygon(t, n, length):
     polyline(t, n, length, angle)
 
 
-def arc(t, r, angle):
-    """Draws an arc with the given radius and angle.
-
-    t: Turtle
-    r: radius
-    angle: angle subtended by the arc, in degrees
-    """
-    arc_length = 2 * math.pi * r * abs(angle) / 360
-    n = int(arc_length / 4) + 1
-    step_length = arc_length / n
-    step_angle = float(angle) / n
-
-    # making a slight left turn before starting reduces
-    # the error caused by the linear approximation of the arc
-    lt(t, step_angle/2)
-    polyline(t, n, step_length, step_angle)
-    rt(t, step_angle/2)
-
-
 def arc(turtleParam, r, angle):
 
     arclen = 2 * math.pi * r * angle / 360
@@ -80,6 +61,7 @@ def arc(turtleParam, r, angle):
     for i in range(n):
         fd(turtleParam, steplen)
         lt(turtleParam, stepangle)
+
 
 
 def circle(t, r):
@@ -100,9 +82,28 @@ if __name__ == '__main__':
 
     bob = Turtle()
     bob.delay = 0.001
+
     arc(bob,50,90)
+    lt(bob, 90)
+    lt(bob, 360/1)
+
+    arc(bob,50,90)
+    lt(bob, 90)
+    lt(bob, 360/2)
+
+    arc(bob,50,90)
+    lt(bob, 90)
+    lt(bob, 360/3)
+
+    arc(bob,50,90)
+    lt(bob, 90)
+    lt(bob, 360/4)
+
     # draw a circle centered on the origin
     '''
+    fd(bob, 100)
+    lt(bob)
+    fd(bob, 100)
     radius = 100
     pu(bob)
     fd(bob, radius)
