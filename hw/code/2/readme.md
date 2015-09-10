@@ -41,12 +41,8 @@ Code for exercise 4 is in [think4.py](./think4.py)
 
 4.2. Images of turtle flowers:
 
-![Exercise 4.2.1](./imgs/421.png) <br/>
-![Exercise 4.2.2](./imgs/422.png) <br/>
-![Exercise 4.2.2](./imgs/423.png) <br/>
+![Exercise 4.2](./imgs/think4/_2.png) <br/>
 
 4.3. Images of turtle pies:
 
-![Exercise 4.3.1](./imgs/431.png) <br/>
-![Exercise 4.3.2](./imgs/432.png) <br/>
-![Exercise 4.3.2](./imgs/433.png) <br/>
+![Exercise 4.3](./imgs/think4/_3.png) <br/>

@@ -21,6 +21,11 @@ def drawFlower(t, petals, radius, angle):
     for i in range(petals):
         drawPetal(t, radius, angle)
         lt(t, 360.0/petals)
+        
+def movebob(t, length):
+    pu(t)
+    fd(t, length)
+    pd(t)
 
 def drawTriangle(t, length, angle):
     diagLen = length * math.sin(angle * math.pi / 180)
@@ -42,12 +47,17 @@ world = TurtleWorld()
 bob = Turtle()
 bob.delay = 0.01
 
-#drawFlower(bob, 7, 60.0, 60.0)
-#drawFlower(bob, 10, 40.0, 80.0)
-#drawFlower(bob, 20, 140.0, 20.0)
+movebob(bob, -120)
+drawFlower(bob, 7, 60.0, 60.0)
+movebob(bob, 120)
+drawFlower(bob, 10, 40.0, 80.0)
+movebob(bob, 120)
+drawFlower(bob, 20, 140.0, 20.0)
 
 #drawPie(bob, 5, 100)
+#movebob(bob, 200)
 #drawPie(bob, 6, 100)
+#movebob(bob, 200)
 #drawPie(bob, 7, 100)
 
 die(bob)
