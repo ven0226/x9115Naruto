@@ -16,7 +16,7 @@
 
 * (iii1) **Motivational Statements**:
 
-Bug reporting however is an uncoordinated distributed process. End users and testers might report the same defects many times in the bug reporting system. This causes an issue as different developers should not be assigned the same defect. Figuring out which bug reports are duplicate of others is typically done manually by a person called the triager. The triager would detect if a bug report is a duplicate; if it is, the triager would mark this report as a duplicate report and the first report as the master report. This process however is not scalable for systems with large user base as the process could take much time. one bug report might only provide a partial view of the defect, while multiple bug reports can complement one another. Thus, in this study, we focus on providing a technique that could help in linking bug reports that are duplicate of one another.
+Bug reporting however is an uncoordinated distributed process. End users and testers might report the same defects many times in the bug reporting system. This causes an issue as different developers should not be assigned the same defect. Figuring out which bug reports are duplicate of others is typically done manually by a person called the triager. The triager would detect if a bug report is a duplicate; if it is, the triager would mark this report as a duplicate report and the first report as the master report. This process however is not scalable for systems with large user base as the process could take much time. One bug report might only provide a partial view of the defect, while multiple bug reports can complement one another. Thus, this study focuses on providing a technique that could help in linking bug reports that are duplicate of one another.
 
 * (iii2) **Related Work**:
 
@@ -34,12 +34,12 @@ Paper uses the bug repositories of three large open source projects: OpenOffice,
 
 * (iii4) **Future Work**:
 
-They plan to build indexing structure of bug report repository to speed up the retrieval process. Plan to integrate the technique into Bugzilla tracking system.
+They plan to build indexing structure of bug report repository to speed up the retrieval process. They also plan to integrate the technique into Bugzilla tracking system.
 
 ## (iv) Improvements:
 
-* (iv1) The key assumption in REP is based on high textual similarity between duplicate bug reports. it is popular that the bug reports can be filed by multiple reporters who could describe about the same technical issue in different phenomena via different terms.
+* (iv1) The key assumption in REP is based on high textual similarity between duplicate bug reports. It is possible that the bug reports can be filed by multiple reporters who could describe about the same technical issue in different phenomena via different terms.
 
-* (iv2) BM25F was picked directly. But no comparisons with other textual similarity algorithms.
+* (iv2) The BM25F model was picked directly. No comparison study with other textual similarity algorithms was carried out.
 
-* (iv3) The experimental setup and dataset could have been uploaded in any public repositories.
+* (iv3) The experimental setup and dataset could have been uploaded to a public repository for reference.
