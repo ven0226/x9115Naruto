@@ -8,7 +8,7 @@ License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 """
 
 from Card import *
-
+from array import array
 
 class PokerHand(Hand):
 
@@ -61,6 +61,19 @@ class PokerHand(Hand):
         return False
     
     def has_straight(self):
+        ranks = [0] * 14
+        for card in self.cards:
+            if card.rank == 1:
+                ranks[13] = 1
+            ranks[card.rank - 1] = 1
+        count = 0;
+        for i in ranks:
+            if i == 1:
+                count += 1
+                if count >= 5:
+                    return True
+            else:
+                count = 0
         return False
         
     def has_flush(self):
@@ -75,6 +88,16 @@ class PokerHand(Hand):
         return False
     
     def has_full_house(self):
+        self.suit_hist()
+        three_kind = 0
+        two_kind = 0
+        for val in self.suits.values():
+            if val >= 3:
+                three_kind += 1
+            elif val >= 2:
+                two_kind += 1
+            if three_kind > 0 and two_kind > 0:
+                return True
         return False
         
     def has_four_kind(self):
@@ -89,6 +112,19 @@ class PokerHand(Hand):
         return False
         
     def has_straight_flush(self):
+        str_flush = {0: [0]*14,1: [0]*14,2: [0]*14,3: [0]*14}
+        for card in self.cards:
+            str_flush[card.suit][card.rank] = 1
+        count = 0
+        for i in range(0,4):
+            for j in str_flush[i]:
+                if j == 1:
+                    count += 1
+                    if count >= 5:
+                        return True
+                else:
+                    count = 0
+
         return False
 
 
@@ -103,5 +139,5 @@ if __name__ == '__main__':
         deck.move_cards(hand, 7)
         hand.sort()
         print hand
-        print hand.has_two_pair()
+        print hand.has_straight_flush()
         print ''
