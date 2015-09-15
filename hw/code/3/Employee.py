@@ -14,9 +14,7 @@ class Employee:
 emp1 = Employee('Venky',27)
 print emp1
 
-print
-
 emp_list = [Employee("John",28),Employee("Doe",20),Employee("Jane",24)]
-print emp_list
+print "Unsorted list: ", emp_list
 
-print sorted(emp_list)
+print "Sorted list:", sorted(emp_list)
