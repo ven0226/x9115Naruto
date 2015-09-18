@@ -20,9 +20,7 @@
 * (iii2) **Related Work**:
 
         * Semi-automated approaches either automatically determine uncommented code segments: D. Roach, H. Berghel, and J. R. Talburt. An Interactive Source Commenter for Prolog Programs. SIGDOC Asterisk J. Comput. Doc., 14(4), 1990.
-
         * Automatically generate comments from high level abstractions: P. N. Robillard. Schematic Pseudocode for Program Constructs and its Computer Automation by SCHEMACODE. Commun. ACM, 29(11), 1986.
-
         * Generating comments for legacy code: F. Long, X. Wang, and Y. Cai. API Hyperlinking via Structural Overlap. Foundations of Software Engineering (FSE), 2009.
 
 
