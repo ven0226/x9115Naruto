@@ -31,7 +31,12 @@
 
 * (iii4) **Future Work**:
 
-In the future, we will improve content selection by excludbning if blocks handling special cases and error return paths, by possibly leveraging branch execution frequency estimation. For improved text generation, we are developing more precise action and theme identification. We will endeavor to make the summaries look more like human-written comments by applying smoothing techniques. We will investigate the feasibility of utilizing the generated leading comments at call sites. Lastly, we will extend the evaluation to longer methods, a larger number of methods and include novices in the evaluation.
-
+To improve content selection by excluding if blocks handling special cases and error return paths, by possibly leveraging branch execution frequency estimation. For improved text generation, they are developing more precise action and theme identification. To make the summaries look more like human-written comments by applying smoothing techniques. To investigate the feasibility of utilizing the generated leading comments at call sites. Lastly, to extend the evaluation to longer methods, a larger number of methods and include novices in the evaluation.
 
 ## (iv) Improvements:
+
+* (iv1) No information was provided to repeat the experiment.
+
+* (iv2) The experiment werent tried on any other programming language.
+
+* (iv3) The dataset links aren't provided in the paper.
