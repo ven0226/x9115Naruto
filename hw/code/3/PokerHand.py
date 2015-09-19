@@ -1,143 +1,126 @@
-"""This module contains code from
-Think Python by Allen B. Downey
-http://thinkpython.com
-
-Copyright 2012 Allen B. Downey
-License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
-
-"""
+__author__ = 'Bhashwanth'
 
 from Card import *
-from array import array
 
 class PokerHand(Hand):
 
     def suit_hist(self):
-        """Builds a histogram of the suits that appear in the hand.
-
-        Stores the result in attribute suits.
-        """
         self.suits = {}
         for card in self.cards:
             self.suits[card.suit] = self.suits.get(card.suit, 0) + 1
-
-    def suit_rank(self):
-        """Builds a histogram of the suits that appear in the hand.
-
-        Stores the result in attribute suits.
-        """
-        self.suits = {}
+            
+    def rank_hist(self):
+        self.ranks = {}
         for card in self.cards:
-            self.suits[card.rank] = self.suits.get(card.rank, 0) + 1
+            self.ranks[card.rank] = self.ranks.get(card.rank, 0) + 1
 
-    
-    def has_pair(self):
-        self.suit_rank()
-        for val in self.suits.values():
-            if val >= 2:
-                return True
-        return False
-    
-    def has_two_pair(self):
-        self.suit_rank()
-        count = 0
-        for val in self.suits.values():
-            if val >= 2:
-                count += 1
-
-        if count >= 2:
-            return True
-        return False
-    
-    def has_three_kind(self):
-        self.suit_rank()
-        count = 0
-        for val in self.suits.values():
-            if val >= 2:
-                count += 1
-
-        if count >= 3:
-            return True
-        return False
-    
-    def has_straight(self):
-        ranks = [0] * 14
-        for card in self.cards:
-            if card.rank == 1:
-                ranks[13] = 1
-            ranks[card.rank - 1] = 1
-        count = 0;
-        for i in ranks:
-            if i == 1:
-                count += 1
-                if count >= 5:
-                    return True
-            else:
-                count = 0
-        return False
-        
     def has_flush(self):
-        """Returns True if the hand has a flush, False otherwise.
-      
-        Note that this works correctly for hands with more than 5 cards.
-        """
         self.suit_hist()
         for val in self.suits.values():
             if val >= 5:
                 return True
         return False
     
-    def has_full_house(self):
-        self.suit_hist()
-        three_kind = 0
-        two_kind = 0
-        for val in self.suits.values():
-            if val >= 3:
-                three_kind += 1
-            elif val >= 2:
-                two_kind += 1
-            if three_kind > 0 and two_kind > 0:
+    def has_pair(self):
+        self.rank_hist()
+        for val in self.ranks.values():
+            if (val >= 2):
                 return True
         return False
         
-    def has_four_kind(self):
-        self.suit_rank()
-        count = 0
-        for val in self.suits.values():
-            if val >= 2:
-                count += 1
-
-        if count >= 4:
+    def has_two_pairs(self):
+        self.rank_hist()
+        numofPairs = 0
+        for val in self.ranks.values():
+            if (val >= 2):
+                numofPairs += 1
+        if (numofPairs >= 2):
             return True
+        else:
+            return False
+        
+    def has_three_of_a_kind(self):
+        self.rank_hist()
+        for val in self.ranks.values():
+            if (val >= 3):
+                return True
+        return False
+     
+    def has_straight(self):
+        self.rank_hist()
+        straight_count = 0
+        for i in range(1, 15):
+            if self.ranks.get(i, 0):
+                straight_count += 1
+                if straight_count == 5: 
+                    return True
+            else:
+                straight_count = 0
+        return False
+        
+    def has_fullhouse(self):
+        self.rank_hist()
+        has_three_of_a_kind = False
+        has_pair = False
+        
+        for val in self.ranks.values():
+            if (val == 3):
+                has_three_of_a_kind = True
+            if (val == 2):
+                has_pair = True
+        return has_three_of_a_kind and has_pair
+        
+    def has_four_of_a_kind(self):
+        self.rank_hist()
+        for val in self.ranks.values():
+            if (val >= 4):
+                return True
         return False
         
     def has_straight_flush(self):
-        str_flush = {0: [0]*14,1: [0]*14,2: [0]*14,3: [0]*14}
-        for card in self.cards:
-            str_flush[card.suit][card.rank] = 1
-        count = 0
-        for i in range(0,4):
-            for j in str_flush[i]:
-                if j == 1:
-                    count += 1
-                    if count >= 5:
-                        return True
-                else:
-                    count = 0
-
-        return False
-
-
+        return self.has_flush() and self.has_straight()
+        
+    def classify(self):
+        if (self.has_straight_flush()):
+            return "Straight Flush"
+        elif (self.has_four_of_a_kind()):
+            return "Four of a kind"
+        elif (self.has_fullhouse()):
+            return "Fullhouse"
+        elif (self.has_flush()):
+            return "Flush"
+        elif (self.has_straight()):
+            return "Straight"
+        elif (self.has_three_of_a_kind()):
+            return "Three of a kind"
+        elif (self.has_two_pairs()):
+            return "Two pair"
+        elif (self.has_pair()):
+            return "Pair"
+        else:
+            return "Highcard"
+            
+hands_count = {"Highcard":0, "Pair":0, "Two pair":0, "Three of a kind":0,
+        "Four of a kind":0, "Straight":0, "Flush":0, "Fullhouse":0, "Straight Flush":0}
+        
 if __name__ == '__main__':
-    # make a deck
-    deck = Deck()
-    deck.shuffle()
-
-    # deal the cards and classify the hands
-    for i in range(7):
-        hand = PokerHand()
-        deck.move_cards(hand, 7)
-        hand.sort()
-        print hand
-        print hand.has_straight_flush()
-        print ''
+    players= 5
+    total_hands = 1000000
+    cards_per_hand = 5
+    
+    for i in range(total_hands):
+        deck = Deck()
+        deck.shuffle()
+        for i in range(players):
+            hand = PokerHand()
+            deck.move_cards(hand, cards_per_hand)
+            hand.sort()
+            hands_count[hand.classify()] += 1
+    
+    prob = {}
+    columns = ['name','prob']
+    for hand in hands_count:
+        prob[hand] = hands_count[hand]/(total_hands*players*1.0)*100
+    print "For " , total_hands, " iterations, Hands and their respective probablities are as given below:"
+    for key in prob:
+        print key, ": ", prob[key],"%"
