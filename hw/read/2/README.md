@@ -27,16 +27,17 @@
 
 
 * (iii3) **Visualizations**:
+<br>
           ![Process diagram](./imgs/train_model.png)
-
+<br>
 * (iii4) **Future Work**:
 
 As a future work, we plan to investigate the utility of paraphrases in discriminative models for potential improve- ment in accuracy.
 
 ## (iv) Improvements:
 
-* (iv1) No information was provided to repeat the experiment.
+* (iv1) No comparative study for selecting SVM.
 
-* (iv2) The experiment werent tried on any other programming language.
+* (iv2) The paper considers only the text in the bugs for matching duplication.
 
-* (iv3) The dataset links aren't provided in the paper.
+* (iv3) The paper has taken a dataset for longer duration but not a large enough dataset to test the performance.
