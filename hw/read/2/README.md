@@ -1,37 +1,37 @@
 # SUMMARY
 
-## (i) G. Sridhara, E. Hill, D. Muppaneni, L. Pollock, and K. Vijay-Shanker, "Towards automatically generating summary comments for java methods," in Proceedings, ASE, 2010.
+## (i) Chengnian Sun , David Lo , Xiaoyin Wang , Jing Jiang , Siau-Cheng Khoo, A discriminative model approach for accurate duplicate bug report retrieval, Proceedings of the 32nd ACM/IEEE International Conference on Software Engineering, May 01-08, 2010, Cape Town, South Africa
 
 ## (ii) Keywords
 
-* (ii1) **Top down design**: The software design technique which aims to describe functionality at a very high level, then partition it repeatedly into more detailed levels one level at a time until the detail is sufficient to allow coding.
+* (ii1) **Reliability**: Reliability is an attribute of any computer-related component (software, or hardware, or a network, for example) that consistently performs according to its specifications.
 
-* (ii2) **Exception Handling**: Exception handling is the process of responding to the occurrence, during computation, of exceptions – anomalous or exceptional conditions requiring special processing – often changing the normal flow of program execution. It is provided by specialized programming language constructs or computer hardware mechanisms.
+* (ii2) **Triage**:This term has been introduced to software quality assurance to describe the function of assigning a priority and severity to new defects, usually by addressing several new defects at once every few days or as necessary.
 
-* (ii3) **Method**: A method in object-oriented programming (OOP) is a procedure associated with an object class.
+* (ii3) **Bug repository**:A bug tracking system or defect tracking system is a software application that keeps track of reported software bugs in software development projects.
 
-* (ii4) **Comments** : In computer programming, a comment is a programmer-readable annotation in the source code of a computer program. They are added with the purpose of making the source code easier to understand, and are generally ignored by compilers and interpreters.
+* (ii4) **Feature Extraction** :Feature extraction is the process of defining a set of features, which will most efficiently or meaningfully represent the information that is important for analysis and classification.
 
 ## (iii) Artifacts:
 
 * (iii1) **Motivational Statements**:
-        Software maintenance demands as much as 90% of soft- ware engineering resources , and much of this time is spent understanding the maintenance task and any related software or documentation. In spite of numerous studies demonstrating the utility of comments for understanding software , few software projects adequately document the code to reduce future maintenance costs. There are a number of ways to overcome insufficient comments. One approach is to obviate comments by using extremely descriptive identifier names. Another way is to encourage the developer to write comments by automatically prompting the developer to enter them. Although these solutions can be used to comment newly created systems, they are not suitable for existing legacy systems.
+          In order to help track software defects and build more reliable systems, bug tracking tools have been introduced. Despite the benefits of a bug reporting system, it does cause some challenges. As bug reporting process is often uncoordinated and ad-hoc, often the same bugs could be reported more than once by different users. Hence, there is often a need for manual inspection to detect whether the bug has been reported before. If the incoming bug report is not reported before then the bug should be assigned to a developer. However, if other users have reported the bug before then the bug would be classified as being a duplicate and attached to the original first-reported “master” bug report. This process referred to as triaging often takes much time.
 
 * (iii2) **Related Work**:
 
-* Semi-automated approaches either automatically determine uncommented code segments: D. Roach, H. Berghel, and J. R. Talburt. An Interactive Source Commenter for Prolog Programs. SIGDOC Asterisk J. Comput. Doc., 14(4), 1990.
+* Textual bug reports via natural language processing techniques: P. Runeson, M. Alexandersson, and O. Nyholm. Detection of Duplicate Defect Reports Using Natural Language Processing. In proceedings of the International Conference on Software Engineering, 2007.
 
-* Automatically generate comments from high level abstractions: P. N. Robillard. Schematic Pseudocode for Program Constructs and its Computer Automation by SCHEMACODE. Commun. ACM, 29(11), 1986.
+* Extended the previous work to two dimensions. First they considered not only TF, but IDF: X. Wang, L. Zhang, T. Xie, J. Anvik, and J. Sun. An Approach to Detecting Duplicate Bug Reports using Natural Language and Execution Information. In proceedings of the International Conference on Software Engineering, 2008.
 
-* Generating comments for legacy code: F. Long, X. Wang, and Y. Cai. API Hyperlinking via Structural Overlap. Foundations of Software Engineering (FSE), 2009.
+* two dimensions. First, they proposed a new term-weighting scheme and clustering and classification techniques to filter duplicates.: N. Jalbert and W. Weimer. Automated Duplicate Detection for Bug Tracking Systems. In proceedings of the International Conference on Dependable Systems and Networks, 2008.
 
 
 * (iii3) **Visualizations**:
-          ![Process diagram](./imgs/process.png)
+          ![Process diagram](./imgs/train_model.png)
 
 * (iii4) **Future Work**:
 
-To improve content selection by excluding if blocks handling special cases and error return paths, by possibly leveraging branch execution frequency estimation. For improved text generation, they are developing more precise action and theme identification. To make the summaries look more like human-written comments by applying smoothing techniques. To investigate the feasibility of utilizing the generated leading comments at call sites. Lastly, to extend the evaluation to longer methods, a larger number of methods and include novices in the evaluation.
+As a future work, we plan to investigate the utility of paraphrases in discriminative models for potential improve- ment in accuracy.
 
 ## (iv) Improvements:
 
