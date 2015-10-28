@@ -80,23 +80,33 @@ class Osyczka2:
 
     def maximizesolution(self,sn,index):
         bestSn = sn
-        steps = 10
+        steps = 100
+        changed = False
         for i in range(steps):
-            sn = self.mutate(sn,index)
+            sn[index] = self.mutate(sn,index)
             if self.checkconstraint(sn):
+                #print("passed")
+                print(self.score(sn))
+                print(self.score(bestSn))
                 if self.score(sn) > self.score(bestSn):
+                    print("changed")
+                    changed = True
                     bestSn = sn
-        return bestSn
+        return changed, bestSn
 
     def say(x):
         sys.stdout.write(str(x)); sys.stdout.flush()
 
 def say(x):
-    sys.stdout.write(str(x)); sys.stdout.flush()
+    #sys.stdout.write(str(x))
+    sys.stdout.flush()
+
+def compare_listcomp(x, y):
+    return [i for i, j in zip(x, y) if i == j]
 
 def maxwalksat(mod):
-    max_tries = 100
-    max_changes = 50
+    max_tries = 50
+    max_changes = 100
     threshold = 150
     p = 0.5
     for i in range(max_tries):
@@ -107,6 +117,7 @@ def maxwalksat(mod):
                 f1,f2 = mod.osycska_func(sn)
                 return "Success", sn, f1,f2
             c = random.randint(0,len(mod.decs)-1)
+            #print(c)
             if p < random.random():
                 #print(sn)
                 temp = mod.mutate(sn,c)
@@ -116,16 +127,20 @@ def maxwalksat(mod):
                 else:
                     say('.')
             else:
-                bestSn = mod.maximizesolution(sn,c)
-                if bestSn != sn:
+                temp = sn
+                changed, bestSn = mod.maximizesolution(sn,c)
+                #print("BSoln:",bestSn)
+                #print("Soln:",temp)
+                #print(changed)
+                if changed:
                     sn = bestSn
                     say('+')
                 else:
                     say('.')
         say('\n')
     f1,f2 = mod.osycska_func(sn)
-    print(f1,f2)
-    return 'failure',sn,f1,f2
+    #print(f1,f2)
+    return 'Failure',sn,f1,f2
 
 if __name__ == '__main__':
     model = Osyczka2()

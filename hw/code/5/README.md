@@ -1,7 +1,5 @@
-## CODE 4  
+## CODE 5  
 
-### SimulatedAnnealing.py
+### MaxWalkSat
 
 ![Q1](./imgs/sa_results.png)
-
-
