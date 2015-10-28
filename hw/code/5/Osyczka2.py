@@ -83,7 +83,7 @@ class Osyczka2:
         steps = 100
         changed = False
         for i in range(steps):
-            sn[index] = self.mutate(sn,index)
+            sn = self.mutate(sn,index)
             if self.checkconstraint(sn):
                 #print("passed")
                 print(self.score(sn))
