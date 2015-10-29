@@ -1,7 +1,7 @@
+from __future__ import division
 __author__ = 'Venkatesh'
 
 import random
-import math
 import sys
 
 
@@ -18,21 +18,20 @@ class Osyczka2:
 
     def getcandidate(self,d):
         can = []
+        #print("############")
         for dec in d:
             #print dec[0],dec[1]
-            can.append(random.randint(dec[0],dec[1]))
+            #print(dec)
+            can.append(random.randrange(dec[0],dec[1]))
         #print(can)
+        #print("############")
         return can
 
     def generate(self):
-        #print("Entering generate")
         while True:
             can = self.getcandidate(self.decs)
-            #print(can)
             if self.checkconstraint(can):
-                #print("passed")
                 return can
-        #exit()
 
     def checkconstraint(self,can):
         #print(can)
@@ -71,34 +70,77 @@ class Osyczka2:
 
     def score(self,can):
         f1,f2 = self.osycska_func(can)
-        return f1+f2
+        return f1+f2 if f1+f2 > 0 else 0
+
+    def norm_score(self,can,norm):
+        sc = self.score(can)
+        #print(sc)
+        #print(norm)
+        norm[1] = norm[1] if norm[1] > sc else sc
+        return norm,(sc/(norm[1] - norm[0]))
 
     def mutate(self,can,index):
         dec = self.decs[index]
         can[index] = random.randrange(dec[0],dec[1])
         return can
 
-    def maximizesolution(self,sn,index):
-        bestSn = sn
-        steps = 100
+    def maximizesolution(self,sn,index,norm):
+        bestSn = sn[:]
+        steps = 10000
         changed = False
+
+        moves = (self.decs[index][1] - self.decs[index][0])/steps
+        # print("moves=%s min=%s max=%s steps=%s" % (moves,self.decs[index][0],self.decs[index][1],steps))
+        # print "BEFORE SN:", sn
+
+
+        sn[index] = self.decs[index][0]
+        # print "INDEX :", index
+
+
+        # print "AFTER SN:", sn
+        # print "new sn:",sn
+        # print "new bestsn:", bestSn
+        # exit()
         for i in range(steps):
-            sn = self.mutate(sn,index)
+            # print "++++++++++++++++++++++++++++++++++++++++++++++++++++"
+            sn[index] += moves
             if self.checkconstraint(sn):
-                #print("passed")
-                print(self.score(sn))
-                print(self.score(bestSn))
-                if self.score(sn) > self.score(bestSn):
-                    print("changed")
+                # print("Solution",sn)
+                # print("BestSn",bestSn)
+                # print "===================================================================================="
+                norm, cur_score = self.norm_score(sn,norm)
+                norm, best_score = self.norm_score(bestSn,norm)
+
+                # if cur_score == best_score:
+                    # print "BOTH ARE EQUAL"
+                    # exit()
+
+                # print("Current Score",cur_score,"Best Score",best_score)
+                if cur_score > best_score:
+                    # print("changed")
+                    # exit()
+                    # print("Exit")
                     changed = True
-                    bestSn = sn
+                    #bestSn = sn
         return changed, bestSn
 
-    def say(x):
-        sys.stdout.write(str(x)); sys.stdout.flush()
+    def baseline_study(self):
+        min_value = sys.maxint
+        max_value = -sys.maxint - 1
+        for i in range(1000):
+            sn = self.generate()
+            sc = self.score(sn)
+            #print("Score",sc)
+            if sc < min_value:
+                #print("minvalue",min_value)
+                min_value = sc
+            if sc > max_value:
+                max_value = sc
+        return [min_value, max_value]
 
 def say(x):
-    #sys.stdout.write(str(x))
+    sys.stdout.write(str(x))
     sys.stdout.flush()
 
 def compare_listcomp(x, y):
@@ -107,47 +149,53 @@ def compare_listcomp(x, y):
 def maxwalksat(mod):
     max_tries = 50
     max_changes = 100
-    threshold = 150
+    threshold = 0.99
     p = 0.5
+    best_sn = []
+    best_sc = 0
+    norm = mod.baseline_study()
     for i in range(max_tries):
         sn = mod.generate()
-        #print("Solution = ",sn)
         for j in range(max_changes):
-            if mod.score(sn) > threshold:
+            norm,score = mod.norm_score(sn,norm)
+            if score > threshold:
                 f1,f2 = mod.osycska_func(sn)
-                return "Success", sn, f1,f2
+                norm,score = mod.norm_score(sn,norm)
+                best_sn = sn[:]
+                best_sc = score
+                return "Success", best_sn, f1,f2,best_sc
+
             c = random.randint(0,len(mod.decs)-1)
-            #print(c)
             if p < random.random():
-                #print(sn)
                 temp = mod.mutate(sn,c)
                 if(mod.checkconstraint(temp)):
-                    #print("mutated ",temp)
+                    sn = temp[:]
                     say('?')
                 else:
                     say('.')
             else:
-                temp = sn
-                changed, bestSn = mod.maximizesolution(sn,c)
-                #print("BSoln:",bestSn)
-                #print("Soln:",temp)
-                #print(changed)
+                changed, local_sn = mod.maximizesolution(sn,c,norm)
                 if changed:
-                    sn = bestSn
+                    norm,local_sc = mod.norm_score(local_sn,norm)
+                    if local_sc > best_sc:
+                        best_sc = local_sc
+                        best_sn = local_sn[:]
+
+                    sn = local_sn[:]
                     say('+')
                 else:
                     say('.')
         say('\n')
     f1,f2 = mod.osycska_func(sn)
-    #print(f1,f2)
-    return 'Failure',sn,f1,f2
+    norm,score = mod.norm_score(sn,norm)
+    return 'Failure',best_sn,f1,f2,best_sc
 
 if __name__ == '__main__':
     model = Osyczka2()
-    #print(maxwalksat(model))
-    status,sn,f1,f2 = maxwalksat(model)
+    status,sn,f1,f2,best_score = maxwalksat(model)
     print
     print("Status: ",status)
     print("Best Solution: ",sn)
     print("F1: ",f1)
     print("F2: ", f2)
+    print("Best Score:",best_score)

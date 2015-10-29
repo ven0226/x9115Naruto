@@ -2,4 +2,4 @@
 
 ### MaxWalkSat
 
-![Q1](./imgs/sa_results.png)
+![Q1](./imgs/output.png)
