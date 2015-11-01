@@ -34,13 +34,13 @@ can signiﬁcantly hamper the bug ﬁxing process and product release. Filtering
 
 * (iii3) **Visualizations**:
 
-			![architecture](./imgs/architecture.png)
+![architecture](./imgs/architecture.PNG)
 
 * (iii4) **Results**:
 
 The figure below presents performance results for randomly selected 1100 duplicate bug reports (i.e., a random selection made from the set of all duplicate bug reports) without any predeﬁned threshold. It presents the recall rate (based on T-T + T-D + D-T similarity) and histogram for Top-N results. 
 
-			![results](./imgs/results.png)
+![results](./imgs/results.PNG)
 
 ## (iv) Improvements:
 
