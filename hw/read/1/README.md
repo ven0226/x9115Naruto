@@ -43,3 +43,4 @@ They plan to build indexing structure of bug report repository to speed up the r
 * (iv2) The BM25F model was picked directly. No comparison study with other textual similarity algorithms was carried out.
 
 * (iv3) The experimental setup and dataset could have been uploaded to a public repository for reference.
+
