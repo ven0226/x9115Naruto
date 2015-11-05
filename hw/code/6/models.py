@@ -260,7 +260,7 @@ def sa(mod):
     printOutput('Success',f1,f2,sb,f1+f2)
 
 def mws(mod):
-    max_tries = 50
+    max_tries = 25
     max_changes = 100
     threshold = 0.99
     p = 0.5
@@ -315,10 +315,10 @@ def say(x):
     sys.stdout.flush()
 
 if __name__ == '__main__':
-    for model in [Kursawe]:
+    for model in [Schaffer,Osyczka2,Kursawe]:
         for optimizer in [sa,mws]:
-            print "="*50
+            print "="*100
             print "Starting Model = %s Optimizer = %s \n\n" % (model.name,str(optimizer.func_name))
             optimizer(model())
             #print "\nFinished Model = %s Optimizer = %s" % (model.name,str(optimizer.func_name))
-            print "="*50
+            print "="*100
