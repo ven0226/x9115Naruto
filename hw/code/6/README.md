@@ -20,6 +20,6 @@
 
 ![Q3](./imgs/osyczk_sa.png)
 
-### Schaffer - MaxWalkSat
+### Osyczka2 - MaxWalkSat
 
-![Q6](./imgs/osyczk_mws.png)
+![Q6](./imgs/osyczka_mws.png)
