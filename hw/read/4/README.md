@@ -44,3 +44,15 @@ Similarly, the following picture depicts the recall rates obtained using differe
 
 	* Conducting experiment on larger sets and deploying the tool on some open source projects to see if triagers benefit from our approach.
 	* Other areas like automated bug assignment and bug prioritization may also benefit from the technique described.
+
+## (iv) Improvements:
+
+* (iv1) The size of the dataset used to test the performance could have been bigger in case of eclipse.
+
+* (iv2) The experimental setup and dataset could have been uploaded to a public repository for reference.
+
+* (iv3) No discussion on the handling of domain speciﬁc term variations.
+
+## (v) Connection to other papers:
+
+The first paper uses the feature vector construction approach described in this paper where each feature is computed by considering both term frequency (TF) and inverse document frequency (IDF) of the words in the bug reports. The first paper also outperforms the techniques used in this paper when used for firefox and eclipse bug reports.
