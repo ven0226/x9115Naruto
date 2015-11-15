@@ -50,3 +50,7 @@ The figure below presents performance results for randomly selected 1100 duplica
 
 * (iv3) No discussion on how the work presented in this study can be further improved or used by researchers in the future.
 
+## (v) Connection to other papers:
+
+This paper processes only natural language text of the bug reports to produce a ranking of related bug reports. The first paper improves on this by considering not only text but also other features that are available in BugZilla like the component where the bug
+resides, the version of the product and the priority of the report. The first paper also uses the same eclipse dataset as used in this paper to compare using the same benchmark.
