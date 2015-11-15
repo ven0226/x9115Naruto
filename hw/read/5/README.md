@@ -36,7 +36,7 @@ The analysis of the "Most Frequently Reported Bugs" page of the Mozilla Projectâ
 
 The experiments were based on 29,000 bug reports from the Mozilla project that span an eight month period from February 2005 to October 2005. The following figure depicts the recall rate of various algorithms on the Runeson task as a function of top list size. Our algorithm performs up to 1% better than that of Runeson et al., which in turn performs better than a direct application of inverse document frequency (TF/IDF).
 
-	![result](./imgs/result.PNG)
+![result](./imgs/result.PNG)
 
 ## (iv) Improvements:
 
