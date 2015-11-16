@@ -4,4 +4,4 @@ The paper  A. Sureka and P. Jalote, “Detecting duplicate bug report using char
 
 The submission form is shown below:
 
-![result](./imgs/dataset.PNG)
+![result](./imgs/dataset.png)
