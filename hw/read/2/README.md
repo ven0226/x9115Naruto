@@ -41,3 +41,7 @@ As a future work, we plan to investigate the utility of paraphrases in discrimin
 * (iv2) The paper considers only the text in the bugs for matching duplication.
 
 * (iv3) The paper has taken a dataset for longer duration but not a large enough dataset to test the performance.
+
+## (v) Connection to other papers:
+
+The first paper uses recall rate and mean average precision provided in this paper as the state of the art and improved upon it. The paper also evaluates the performance of their new retrieval function REP against the Support Vector Machine bases technique used in this paper.
