@@ -2,78 +2,102 @@ from __future__ import division
 __author__ = 'Venkatesh'
 
 import random
-import math
+from Utility import Utility
 
-class decs:
-    hi = 0
-    lo = 0
-    def __init__(self,lo,hi):
-        self.hi = hi
-        self.lo = lo
+class DiffEvol:
 
-class de:
-    decisons = []
-    def __init__(self):
-        lo = [2.6,0.7,17.0,7.3,7.3,2.9,5.0]
-        hi = [3.6,0.8,28.0,8.3,8.3,3.9,5.5]
-        for i in range((len(hi))):
-            self.decisons.append(decs(lo[i],hi[i]))
+    def generate_frontier(self,size,mod):
+        frontier = []
+        for i in range(size):
+            frontier.append(mod.generate())
+        return frontier
 
-    def generate(self):
-        while True:
-            can = self.getcandidate(self.decs)
-            if self.checkconstraint(can):
-                return can
+    def update(self,mod,f,cf,frontier,eb, total=0.0, n=0):
+        ib = -1
+        for i,x in enumerate(frontier):
+            sc = mod.score(x)
+            new = self.extrapolate(frontier,x,f,cf,i,mod)
+            new_sc = mod.score(new)
+            if new_sc > eb:
+                Utility.say('?')
+                eb = sc = new_sc
+                frontier[i] = x[:]
+                ib = i
+            elif new_sc > sc:
+                Utility.say('+')
+                sc = new_sc
+                frontier[i] = x[:]
+            else:
+                Utility.say('.')
+            total += sc
+            n += 1
+        return total,n,eb,ib,frontier
 
-    def getcandidate(self):
-        can = []
-        for dec in self.decs:
-            can.append(random.randrange(dec.lo,dec.hi))
-        return can
+    def extrapolate(self,frontier,one,f,cf,id,mod):
+        out = one[:]
+        two,three,four = self.threeOthers(frontier,id)
+        ok = False
+        while not ok:
+            changed = False
+            for d in range(len(mod.decisons)):
+                x,y,z = two[d], three[d], four[d]
+                if random.random() < cf:
+                    changed = True
+                    new = x + f*(y - z)
+                    out[d]  = self.trim(new,d,mod) # keep in range
+                if not changed:
+                    mut_index = random.randint(0, len(mod.decisons)-1)
+                    out[mut_index] = two[mut_index]
+                ok = mod.checkconstraint(out)
+        return out
 
-    def f2(self,can):
+    def trim(self,val,index,mod):
+        res = val
+        while res > mod.decisons[index].hi:
+          res = res - mod.decisons[index].hi + mod.decisons[index].lo
+        while res < mod.decisons[index].lo:
+          res = mod.decisons[index].hi - (mod.decisons[index].lo - res)
+        return res
 
-        return math.pow(math.pow(745*can[3]/can[1]*can[2],2) + 1.69*math.pow(10,7),1/2)/0.1*math.pow(can[5],3)
+    def threeOthers(self,frontier, avoid):
+        seen = []
+        seen.append(avoid)
+        i = 0
+        selected = []
+        while i < 3:
+            picked = random.randint(0, len(frontier)-1)
+            if picked not in seen:
+                seen.append(picked)
+                selected.append(frontier[picked])
+                i += 1
+        return selected[0],selected[1],selected[2]
 
-    def f1(self,can):
+    def init_score(self,mod,frontier):
+        total = 0
+        n = 0
+        for x in frontier:
+            sc = mod.score(x)
+            total += sc
+            n += 1
+        return total/n
 
-        return 0.7854*can[1]*math.pow(can[1],2)*(10*math.pow(can[2],2)/3 + 14.933*can[2] - 43.0934) \
-               - 1.508*can[0]*(math.pow(can[5],2) + math.pow(can[6],2)) \
-               + 7.477*(math.pow(can[5],3) + math.pow(can[6],3)) \
-               + 0.7854*(can[3]*math.pow(can[5],2) + can[4]*math.pow(can[6],2))
+    def de(self,mod):
+        frontier_size = 50
+        max_tries = 40
+        f = 0.75
+        cf = 0.3
+        epsilon = 0.1
+        ib = -1
+        frontier = self.generate_frontier(frontier_size,mod)
+        eb = self.init_score(mod,frontier)
+        for k in range(max_tries):
+            total,n,eb,ib,frontier = self.update(mod,f,cf,frontier,eb)
+            Utility.say("\n")
+            #en = total/n
 
-    def checkconstraint(self,can):
-        if not 1/(can[0]*math.pow(can[1],2)*can[2]) - 1/27 <=0:
-            return False
+            #if total/n > (1 - epsilon):
+             #   break
+        f1,f2 = mod.objs(frontier[ib])
+        Utility.printOutput("Success",f1,f2,frontier[ib],eb)
+        return frontier
 
-        if not math.pow(can[3],3)/can[1]*math.pow(can[2],2)*math.pow(can[5],4) - 1.0/1.93 <= 0:
-            return False
-
-        if not math.pow(can[4],3)/can[1]*can[2]*math.pow(can[6],4) - 1/1.93 <= 0:
-            return False
-
-        if not can[1]*can[2] -40 <= 0:
-            return False
-
-        if not can[0]/can[1] - 12 <= 0:
-            return False
-
-        if 5 - can[0]/can[1] <= 0:
-            return False
-
-        if 1.9 - can[3] + 1.5*can[5] <= 0:
-            return False
-
-        if 1.9 - can[4] + 1.1*can[6] <= 0:
-            return False
-
-        if not self.f2(can) <= 1300:
-            return False
-
-        a = 745*can[4]/can[1]*can[2]
-        b = 1.575 * math.pow(10,8)
-
-        if not math.pow(a**2+b,1/2)/0.1*math.pow(can[6],3) <= 1100:
-            return False
-
-        return True
