@@ -18,12 +18,12 @@ class DiffEvol:
             sc = mod.score(x)
             new = self.extrapolate(frontier,x,f,cf,i,mod)
             new_sc = mod.score(new)
-            if new_sc > eb:
+            if new_sc < eb:
                 Utility.say('?')
                 eb = sc = new_sc
                 frontier[i] = x[:]
                 ib = i
-            elif new_sc > sc:
+            elif new_sc < sc:
                 Utility.say('+')
                 sc = new_sc
                 frontier[i] = x[:]
