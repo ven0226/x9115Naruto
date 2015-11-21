@@ -1,5 +1,3 @@
-__author__ = 'Venkatesh'
-
 from code8.models.Schaffer import Schaffer
 from code8.models.Kursawe import Kursawe
 from code8.models.Osyczka2 import Osyczka2

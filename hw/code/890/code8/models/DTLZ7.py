@@ -19,7 +19,7 @@ class DTLZ7:
         return can[0]
 
     def f2(self,can):
-        g = 1 + 9/len(can) * sum(x for x in can)
+        g = 1 + 9/len(can) * sum(can)
         def calch():
             total = 0
             for x in range(1): # no of objectives
