@@ -8,8 +8,8 @@ from code8.optimizers.sa import sa
 
 if __name__ == '__main__':
     for model in [Schaffer,Osyczka2,Kursawe,Golinski]:
-        mod = model()
         for optimizer in [sa,mws,de]:
+            mod = model()
             print "="*100
             print "Starting Model = %s Optimizer = %s \n\n" % (model.name,str(optimizer.func_name))
             optimizer(mod)

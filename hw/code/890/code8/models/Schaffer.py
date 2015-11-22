@@ -7,6 +7,7 @@ from model import Model
 
 class Schaffer(Model):
     name = "Shaffer"
+    decisons = []
     def __init__(self):
         lo = [-math.pow(10,5)]
         hi = [math.pow(10,5)]
