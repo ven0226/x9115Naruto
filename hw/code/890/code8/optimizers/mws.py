@@ -22,7 +22,7 @@ def maximizesolution(mod,sn,index,norm):
         if mod.checkconstraint(sn):
             norm, cur_score = mod.get_energy(sn,norm)
             norm, best_score = mod.get_energy(bestSn,norm)
-            if cur_score > best_score:
+            if cur_score < best_score:
                 changed = True
                 bestSn = sn[:]
     return changed, bestSn
@@ -30,21 +30,22 @@ def maximizesolution(mod,sn,index,norm):
 def mws(mod):
     max_tries = 25
     max_changes = 100
-    threshold = 0.9999999999
+    threshold = 0.111111
     p = 0.5
-    best_sn = []
-    best_sc = 0
+    best_sn = mod.generate()
+    best_sc = mod.score(best_sn)
     norm = mod.baseline_study()
     for i in range(max_tries):
         sn = mod.generate()
         for j in range(max_changes):
             norm,score = mod.get_energy(sn,norm)
-            if score > threshold:
+            if score < threshold:
                 f1,f2 = mod.objs(sn)
                 norm,score = mod.get_energy(sn,norm)
                 best_sn = sn[:]
                 best_sc = score
-                return Utility.printOutput("Success", f1,f2,best_sn,best_sc)
+                Utility.printOutput("Success", f1,f2,best_sn,best_sc)
+                return best_sn
             limit = len(mod.decisons)-1 if len(mod.decisons) > 0 else 0
             c = random.randint(0,limit)
             if p < random.random():
@@ -58,7 +59,7 @@ def mws(mod):
                 changed, local_sn = maximizesolution(mod,sn,c,norm)
                 if changed:
                     norm,local_sc = mod.get_energy(local_sn,norm)
-                    if local_sc > best_sc:
+                    if local_sc < best_sc:
                         best_sc = local_sc
                         best_sn = local_sn[:]
                     sn = local_sn[:]
@@ -67,4 +68,5 @@ def mws(mod):
                     Utility.say('.')
         Utility.say('\n')
     f1,f2 = mod.objs(sn)
-    return Utility.printOutput('Failure',f1,f2,best_sn,best_sc)
+    Utility.printOutput('Failure',f1,f2,best_sn,best_sc)
+    return best_sn

@@ -93,5 +93,5 @@ def de(mod):
         Utility.say("\n")
     f1,f2 = mod.objs(frontier[ib])
     Utility.printOutput("Success",f1,f2,frontier[ib],eb)
-    return frontier
+    return frontier[ib]
 

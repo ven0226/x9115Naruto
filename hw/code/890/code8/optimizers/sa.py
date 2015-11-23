@@ -36,3 +36,4 @@ def sa(mod):
 
     f1,f2 = mod.objs(sb)
     Utility.printOutput('Success',f1,f2,sb,f1+f2)
+    return sb

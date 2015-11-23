@@ -5,10 +5,12 @@ import random
 import math
 import sys
 from code8.optimizers.decs import Decisions
+from code8.models.model import Model
 
-class DTLZ7:
+class DTLZ7(Model):
     no_decisions = 10
     decisions = []
+    name = "DTLZ7"
     def __init__(self):
         lo = [0]
         hi = [1]
@@ -29,3 +31,7 @@ class DTLZ7:
 
         return (1+g)*calch()
 
+    def objs(self,can):
+        obj1 = self.f1(can)
+        obj2 = self.f2(can)
+        return obj1,obj2
