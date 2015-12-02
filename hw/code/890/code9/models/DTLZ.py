@@ -1,9 +1,7 @@
 from __future__ import division
 __author__ = 'Venkatesh'
 
-import random
 import math
-import sys
 from code9.optimizers.decs import Decisions
 from code9.models.model import Model
 
@@ -54,24 +52,27 @@ class DTLZ3(Model):
         for i in range(self.no_decisions):
             self.decisons.append(Decisions(lo[0],hi[0]))
 
-    def f1(self,can):
-        return can[0]
+    def g(self,can):
+        g_val = 0
+        for x in can:
+            g_val += math.pow((x-0.5),2) - math.cos(20*math.pi*(x-0.5))
+        g_val += len(can)
+        g_val *= 100
+        return g_val
 
-    def f2(self,can):
-        g = 1 + 9/len(can) * sum(can)
-        def calch():
-            total = 0
-            for x in range(1): # no of objectives
-                total += (self.f1(can)/(1+g))*(1 + math.sin(3*math.pi*self.f1(can)))
-            total = len(can) - total
-            return total
-
-        return (1+g)*calch()
+    def score(self,can):
+        return sum(self.objs(can))
 
     def objs(self,can):
-        obj1 = self.f1(can)
-        obj2 = self.f2(can)
-        return obj1,obj2
+        objectives = []
+        for i in range(self.no_objectives):
+            val = (1 + self.g(can))
+            for x in range(len(can) - 1 - i):
+                val *= math.cos(x*(math.pi/2))
+            if i > 0:
+                val *= math.sin(x*(math.pi/2))
+            objectives.append(val)
+        return objectives
 
 
 class DTLZ5(Model):
@@ -85,24 +86,29 @@ class DTLZ5(Model):
         for i in range(self.no_decisions):
             self.decisons.append(Decisions(lo[0],hi[0]))
 
-    def f1(self,can):
-        return can[0]
+    def g(self,can):
+        g_val = 0
+        for x in can:
+            g_val += math.pow((x-0.5),2)
+        return g_val
 
-    def f2(self,can):
-        g = 1 + 9/len(can) * sum(can)
-        def calch():
-            total = 0
-            for x in range(1): # no of objectives
-                total += (self.f1(can)/(1+g))*(1 + math.sin(3*math.pi*self.f1(can)))
-            total = len(can) - total
-            return total
+    def score(self,can):
+        return sum(self.objs(can))
 
-        return (1+g)*calch()
+    def theta(self,x,g_val):
+        return (math.pi/(4 * (1 + self.g(x)))) * (1 + (2 * self.g(x) * x))
 
     def objs(self,can):
-        obj1 = self.f1(can)
-        obj2 = self.f2(can)
-        return obj1,obj2
+        objectives = []
+        for i in range(self.no_objectives):
+            g_val = self.g(can)
+            val = (1 + g_val)
+            for x in range(len(can) - 1 - i):
+                val *= math.cos(self.theta(x)*(math.pi/2))
+            if i > 0:
+                val *= math.sin(self.theta(x)*(math.pi/2))
+            objectives.append(val)
+        return objectives
 
 
 class DTLZ7(Model):
@@ -116,10 +122,15 @@ class DTLZ7(Model):
         for i in range(self.no_decisions):
             self.decisons.append(Decisions(lo[0],hi[0]))
 
-    def f1(self,can):
-        return can[0]
+    def score(self,can):
+        return sum(self.objs(can))
 
-    def f2(self,can):
+    def fm(self,can):
+        objectives = []
+
+        for i in range(self.no_decisions - 1):
+            objectives.append(can[i])
+
         g = 1 + 9/len(can) * sum(can)
         def calch():
             total = 0
@@ -131,6 +142,4 @@ class DTLZ7(Model):
         return (1+g)*calch()
 
     def objs(self,can):
-        obj1 = self.f1(can)
-        obj2 = self.f2(can)
-        return obj1,obj2
+        return self.fm(can)
