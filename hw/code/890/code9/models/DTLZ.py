@@ -123,7 +123,7 @@ class DTLZ7(Model):
             self.decisons.append(Decisions(lo[0],hi[0]))
 
     def score(self,can):
-        return sum(self.objs(can))
+        return abs(sum(self.objs(can)))
 
     def fm(self,can):
         objectives = []

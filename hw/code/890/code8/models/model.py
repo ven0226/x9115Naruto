@@ -21,7 +21,9 @@ class Model:
 
     def score(self,can):
         f1,f2 = self.objs(can)
-        return f1 + f2
+        if f1 + f2 < 0:
+            print True
+        return math.fabs(f1 + f2)
 
     def objs(self,x):
         return 1
@@ -42,10 +44,13 @@ class Model:
         return math.exp((old-new)/k)
 
     def get_energy(self,can,norm):
-        sc = self.score(can)
+        sc = math.fabs(self.score(can))
         norm[1] = norm[1] if norm[1] > sc else sc
-        e = ((sc-norm[0])/(norm[1] - norm[0]))
+        e = math.fabs((sc-norm[0])/(norm[1] - norm[0]))
         return norm,e
 
     def checkconstraint(self,can):
         return True
+
+    def default_objs(self):
+        return sys.maxint,sys.maxint

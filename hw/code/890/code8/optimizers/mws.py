@@ -28,15 +28,21 @@ def maximizesolution(mod,sn,index,norm):
     return changed, bestSn
 
 def mws(mod):
-    max_tries = 25
+    max_tries = 100
     max_changes = 100
-    threshold = 0.111111
-    p = 0.5
+    threshold = 0.001
+    p = 0.05
+    lives = 3
     best_sn = mod.generate()
-    best_sc = mod.score(best_sn)
     norm = mod.baseline_study()
+    norm, best_sc = mod.get_energy(best_sn,norm)
+
+    prev = mod.default_objs()
+    k = 1
+    Utility.say(str(k)+"|")
     for i in range(max_tries):
         sn = mod.generate()
+        cur = []
         for j in range(max_changes):
             norm,score = mod.get_energy(sn,norm)
             if score < threshold:
@@ -66,7 +72,16 @@ def mws(mod):
                     Utility.say('+')
                 else:
                     Utility.say('.')
-        Utility.say('\n')
+            cur.append(mod.objs(sn))
+        cur = map(Utility.mean, zip(*cur))
+        if Utility.better(prev,cur):
+            lives -= 1
+        if lives is 0:
+            break
+        else:
+            prev = cur[:]
+        k += max_changes
+        Utility.say("\n"+str(int(k))+"|")
     f1,f2 = mod.objs(sn)
     Utility.printOutput('Failure',f1,f2,best_sn,best_sc)
     return best_sn

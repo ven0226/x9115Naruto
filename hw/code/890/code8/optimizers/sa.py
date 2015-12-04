@@ -11,8 +11,10 @@ def sa(mod):
     sb = s[:]
     eb = e
     k = 1.0
-    kmax = 999.0
+    kmax = 1499.0
+    lives = 5
     Utility.say("1|")
+    prev = mod.default_objs()
     cur = []
     while k < kmax:
       sn = mod.generate()
@@ -21,28 +23,28 @@ def sa(mod):
         sb = sn[:]
         eb = en
         Utility.say("!")
-        cur.append("!")
       if en < e:
         s = sn[:]
         e = en
         Utility.say("+")
-        cur.append("+")
       elif mod.prob(e, en, k*7/(kmax)) < random.random():
         s = sn
         e = en
         Utility.say("?")
-        cur.append("?")
       Utility.say(".")
-      cur.append(".")
+      cur.append(mod.objs(sb))
 
       k = k + 1
-      if k % 25 == 0:
-        if not cur.__contains__("!") and not cur.__contains__("+"):
-            break;
+      if k % 100 == 0:
+        cur = map(Utility.mean, zip(*cur))
+        if Utility.better(prev,cur):
+            lives -= 1
+        if lives is 0:
+            break
+        else:
+            prev = cur[:]
         cur = []
         Utility.say("\n"+str(int(k))+"|")
-
-
 
     f1,f2 = mod.objs(sb)
     Utility.printOutput('Success',f1,f2,sb,f1+f2)

@@ -12,6 +12,7 @@ def generate_frontier(size,mod):
 
 def update(mod,f,cf,frontier,eb, total=0.0, n=0):
     ib = -1
+    cur = []
     for i,x in enumerate(frontier):
         sc = mod.score(x)
         new = extrapolate(frontier,x,f,cf,i,mod)
@@ -19,17 +20,19 @@ def update(mod,f,cf,frontier,eb, total=0.0, n=0):
         if new_sc < eb:
             Utility.say('?')
             eb = sc = new_sc
-            frontier[i] = x[:]
+            frontier[i] = new[:]
             ib = i
         elif new_sc < sc:
             Utility.say('+')
             sc = new_sc
-            frontier[i] = x[:]
+            frontier[i] = new[:]
         else:
             Utility.say('.')
         total += sc
         n += 1
-    return total,n,eb,ib,frontier
+        cur.append(mod.objs(x))
+    cur = map(Utility.mean, zip(*cur))
+    return total,n,eb,ib,frontier,cur
 
 def extrapolate(frontier,one,f,cf,id,mod):
     out = one[:]
@@ -85,11 +88,22 @@ def de(mod):
     f = 0.75
     cf = 0.3
     epsilon = 0.1
+    lives = 3
     ib = -1
     frontier = generate_frontier(frontier_size,mod)
     eb = init_score(mod,frontier)
+    prev = mod.default_objs()
+    lives = 5
+    p = 1
     for k in range(max_tries):
-        total,n,eb,ib,frontier = update(mod,f,cf,frontier,eb)
+        Utility.say(str(p)+"|")
+        total,n,eb,ib,frontier,cur = update(mod,f,cf,frontier,eb)
+        if Utility.better(prev,cur):
+            lives -= 1
+        if lives is 0:
+            break
+        prev = cur[:]
+        p += max_tries
         Utility.say("\n")
     f1,f2 = mod.objs(frontier[ib])
     Utility.printOutput("Success",f1,f2,frontier[ib],eb)

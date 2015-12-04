@@ -17,3 +17,14 @@ class Utility:
     def say(x):
         sys.stdout.write(str(x))
         sys.stdout.flush()
+
+    @staticmethod
+    def mean(a):
+        return sum(a) / len(a)
+
+    @staticmethod
+    def better(prev,cur):
+        for i in range(len(prev)):
+            if not cur[i] < prev[i]:
+                return False
+        return True
