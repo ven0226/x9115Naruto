@@ -31,7 +31,7 @@ class ga():
         can = []
         index = None
         for i in range(self.generations):
-
+            select_sample = self.select(frontier)
             if random.random < self.mutate_prob:
                 self.mutate(mod,can,index)
             print "hello"
