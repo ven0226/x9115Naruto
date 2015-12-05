@@ -2,7 +2,7 @@ from __future__ import division
 __author__ = 'Venkatesh'
 
 import math
-from code8.optimizers.decs import Decisions
+from optimizers.decs import Decisions
 from model import Model
 
 class Schaffer(Model):

@@ -1,5 +1,6 @@
 __author__ = 'Venkatesh'
 
+from itertools import islice
 import sys
 
 class Utility:
@@ -28,3 +29,8 @@ class Utility:
             if not cur[i] < prev[i]:
                 return False
         return True
+
+    @staticmethod
+    def take(n, iterable):
+        "Return first n items of the iterable as a list"
+        return list(islice(iterable, n))

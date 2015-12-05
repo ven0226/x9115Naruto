@@ -2,8 +2,8 @@ from __future__ import division
 __author__ = 'Venkatesh'
 
 import math
-from code8.optimizers.decs import Decisions
-from code8.models.model import Model
+from optimizers.decs import Decisions
+from models.model import Model
 
 class Kursawe(Model):
     name = "Kursawe"

@@ -3,8 +3,8 @@ __author__ = 'Venkatesh'
 
 import random
 import math
-from code8.optimizers.decs import Decisions
-from code8.models.model import Model
+from optimizers.decs import Decisions
+from models.model import Model
 
 class Golinski(Model):
     decisons = []

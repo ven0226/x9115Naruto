@@ -4,8 +4,8 @@ __author__ = 'Venkatesh'
 import random
 import math
 import sys
-from code8.optimizers.decs import Decisions
-from code8.models.model import Model
+from optimizers.decs import Decisions
+from models.model import Model
 
 class DTLZ7(Model):
     no_decisions = 10

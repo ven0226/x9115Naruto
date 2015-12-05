@@ -1,7 +1,7 @@
 __author__ = 'Venkatesh'
 
 import random
-from code8.helper.Utility import Utility
+from helper.Utility import Utility
 
 
 def mutate(mod,can,index):

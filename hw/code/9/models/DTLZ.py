@@ -2,8 +2,8 @@ from __future__ import division
 __author__ = 'Venkatesh'
 
 import math
-from code9.optimizers.decs import Decisions
-from code9.models.model import Model
+from optimizers.decs import Decisions
+from models.model import Model
 
 class DTLZ1(Model):
     no_decisions = 10
@@ -32,6 +32,8 @@ class DTLZ1(Model):
         for x in can[:-1]:
             val *= x
 
+        return val
+
     def f2(self,can):
         return 0.5 *  (1 - can[0]) * (1.0 + self.g(can))
 
@@ -39,6 +41,9 @@ class DTLZ1(Model):
         obj1 = self.f1(can)
         obj2 = self.f2(can)
         return obj1,obj2
+
+    def score(self,can):
+        return sum(self.objs(can))
 
 
 class DTLZ3(Model):

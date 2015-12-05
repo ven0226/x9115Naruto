@@ -1,6 +1,6 @@
 __author__ = 'Venkatesh'
 
-from code9.optimizers import *
+from optimizers import *
 
 class Decisions:
     hi = 0
