@@ -1,0 +1,183 @@
+Starting Model = DTLZ1 Optimizer = ga 
+
+# Runtime: 3.672 secs
+
+# Runtime: 3.028 secs
+
+# Runtime: 2.517 secs
+
+# Runtime: 2.872 secs
+
+# Runtime: 2.494 secs
+
+# Runtime: 2.465 secs
+
+# Runtime: 2.947 secs
+
+# Runtime: 2.967 secs
+
+# Runtime: 3.312 secs
+
+# Runtime: 3.332 secs
+
+# Runtime: 2.492 secs
+
+# Runtime: 3.298 secs
+
+# Runtime: 3.248 secs
+
+# Runtime: 3.367 secs
+
+# Runtime: 2.467 secs
+
+# Runtime: 2.471 secs
+
+# Runtime: 2.478 secs
+
+# Runtime: 2.884 secs
+
+# Runtime: 3.325 secs
+
+# Runtime: 3.731 secs
+
+# Average: 2.968 secs
+
+#################################################################
+
+Starting Model = DTLZ3 Optimizer = ga
+
+# Runtime: 18.230 secs
+
+# Runtime: 17.984 secs
+
+# Runtime: 18.041 secs
+
+# Runtime: 18.789 secs
+
+# Runtime: 18.588 secs
+
+# Runtime: 18.225 secs
+
+# Runtime: 18.061 secs
+
+# Runtime: 18.213 secs
+
+# Runtime: 18.036 secs
+
+# Runtime: 18.285 secs
+
+# Runtime: 18.045 secs
+
+# Runtime: 17.983 secs
+
+# Runtime: 17.987 secs
+
+# Runtime: 17.944 secs
+
+# Runtime: 18.276 secs
+
+# Runtime: 18.113 secs
+
+# Runtime: 18.143 secs
+
+# Runtime: 18.099 secs
+
+# Runtime: 18.008 secs
+
+# Runtime: 18.079 secs
+
+# Average: 18.156 secs
+
+#################################################################
+
+Starting Model = DTLZ5 Optimizer = ga 
+
+# Runtime: 146.808 secs
+
+# Runtime: 113.619 secs
+
+# Runtime: 83.343 secs
+
+# Runtime: 83.446 secs
+
+# Runtime: 103.250 secs
+
+# Runtime: 114.110 secs
+
+# Runtime: 71.077 secs
+
+# Runtime: 91.036 secs
+
+# Runtime: 113.705 secs
+
+# Runtime: 115.678 secs
+
+# Runtime: 94.806 secs
+
+# Runtime: 84.282 secs
+
+# Runtime: 62.994 secs
+
+# Runtime: 73.161 secs
+
+# Runtime: 105.466 secs
+
+# Runtime: 94.306 secs
+
+# Runtime: 91.114 secs
+
+# Runtime: 81.491 secs
+
+# Runtime: 105.639 secs
+
+# Runtime: 72.070 secs
+
+# Average: 95.070 secs
+
+#################################################################
+
+Starting Model = DTLZ7 Optimizer = ga
+
+# Runtime: 1.922 secs
+
+# Runtime: 1.837 secs
+
+# Runtime: 1.669 secs
+
+# Runtime: 1.772 secs
+
+# Runtime: 1.724 secs
+
+# Runtime: 1.719 secs
+
+# Runtime: 1.804 secs
+
+# Runtime: 1.754 secs
+
+# Runtime: 1.714 secs
+
+# Runtime: 1.752 secs
+
+# Runtime: 1.842 secs
+
+# Runtime: 1.658 secs
+
+# Runtime: 1.759 secs
+
+# Runtime: 1.705 secs
+
+# Runtime: 1.907 secs
+
+# Runtime: 1.800 secs
+
+# Runtime: 1.689 secs
+
+# Runtime: 1.755 secs
+
+# Runtime: 1.694 secs
+
+# Runtime: 1.719 secs
+
+# Average: 1.760 secs
+
+#################################################################

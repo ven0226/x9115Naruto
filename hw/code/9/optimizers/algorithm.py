@@ -95,10 +95,10 @@ class ga():
         for i,can in enumerate(cur_frontier):
             rand_num = random.uniform(0,1)
             if rand_num < self.mutate_prob:
-                index = random.randint(0,mod.no_decisions)
+                index = random.randint(0,mod.no_decisions-1)
                 cur_frontier[i] = self.mutate(mod,can,index)
                 mutate_count += 1
-        print("# Mutate Count: %d" % (mutate_count))
+        #print("# Mutate Count: %d" % (mutate_count))
         return cur_frontier
 
     def mutate(self,mod,can,index):

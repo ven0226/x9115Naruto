@@ -35,11 +35,13 @@ repeat for i generations
 
 ## Results: 
  
- Table : Values of Auxiliaries Used 
+ Table : Performance results of the DLTZ 
 
 |Optimizer   | DLTZ1   |  DLTZ3 | DLTZ5  | DLTZ7  |
 |------------------------------|-----|-----|-----|-----|
 | Standard GA      | 0  | 1 | 1 | 1 | 
+|------------------------------|-----|-----|-----|-----|
+| Standard GA (20 Repeats)    | 0  | 1 | 1 | 1 | 
 
 ## Conclusions 
 
