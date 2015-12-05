@@ -38,9 +38,10 @@ class DTLZ1(Model):
         return 0.5 *  (1 - can[0]) * (1.0 + self.g(can))
 
     def objs(self,can):
-        obj1 = self.f1(can)
-        obj2 = self.f2(can)
-        return obj1,obj2
+        objectives = []
+        objectives.append(self.f1(can))
+        objectives.append(self.f2(can))
+        return objectives
 
     def score(self,can):
         return sum(self.objs(can))

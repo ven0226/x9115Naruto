@@ -49,3 +49,6 @@ class Model:
 
     def checkconstraint(self,can):
         return True
+
+    def default_objs(self):
+        return sys.maxint,sys.maxint
