@@ -102,7 +102,7 @@ class DTLZ5(Model):
         return sum(self.objs(can))
 
     def theta(self,x,g_val):
-        return (math.pi/(4 * (1 + self.g(x)))) * (1 + (2 * self.g(x) * x))
+        return (math.pi/(4 * (1 + g_val))) * (1 + (2 * g_val * x))
 
     def objs(self,can):
         objectives = []
@@ -110,9 +110,9 @@ class DTLZ5(Model):
             g_val = self.g(can)
             val = (1 + g_val)
             for x in range(len(can) - 1 - i):
-                val *= math.cos(self.theta(x)*(math.pi/2))
+                val *= math.cos(self.theta(x,g_val)*(math.pi/2))
             if i > 0:
-                val *= math.sin(self.theta(x)*(math.pi/2))
+                val *= math.sin(self.theta(x,g_val)*(math.pi/2))
             objectives.append(val)
         return objectives
 
@@ -133,19 +133,20 @@ class DTLZ7(Model):
 
     def fm(self,can):
         objectives = []
-
         for i in range(self.no_decisions - 1):
             objectives.append(can[i])
-
         g = 1 + 9/len(can) * sum(can)
+
         def calch():
             total = 0
             for x in range(1): # no of objectives
-                total += (self.f1(can)/(1+g))*(1 + math.sin(3*math.pi*self.f1(can)))
+                total += (objectives[0]/(1+g))*(1 + math.sin(3*math.pi*objectives[0]))
             total = len(can) - total
             return total
 
-        return (1+g)*calch()
+        objectives.append((1+g)*calch())
+
+        return objectives
 
     def objs(self,can):
         return self.fm(can)

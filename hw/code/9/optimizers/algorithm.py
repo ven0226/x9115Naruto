@@ -9,7 +9,7 @@ class ga():
     candidates = 100
     generations = 1000
     target = 0.00001
-    mutate_prob = 0.05
+    mutate_prob = 0.1
     name = "ga"
 
     def init_score(self,mod,frontier):
@@ -48,7 +48,6 @@ class ga():
                 break
             else:
                 prev_era = cur_era[:]
-        print i
     def iDominate(self,mod,left,right):
         if mod.score(left) > mod.score(right):
             return True
@@ -94,14 +93,15 @@ class ga():
     def do_mutation(self,mod,cur_frontier):
         mutate_count = 0
         for i,can in enumerate(cur_frontier):
-            if random.random < self.mutate_prob:
+            rand_num = random.uniform(0,1)
+            if rand_num < self.mutate_prob:
                 index = random.randint(0,mod.no_decisions)
                 cur_frontier[i] = self.mutate(mod,can,index)
                 mutate_count += 1
-        print mutate_count
+        print("# Mutate Count: %d" % (mutate_count))
         return cur_frontier
 
-    def mutate(mod,can,index):
+    def mutate(self,mod,can,index):
         dec = mod.decisons[index]
         can[index] = random.uniform(dec.lo,dec.hi)
         return can
