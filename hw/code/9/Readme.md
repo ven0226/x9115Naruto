@@ -39,9 +39,7 @@ repeat for i generations
 
 |Optimizer   | DLTZ1   |  DLTZ3 | DLTZ5  | DLTZ7  |
 |------------------------------|-----|-----|-----|-----|
-| Standard GA      | 0  | 1 | 1 | 1 | 
-|------------------------------|-----|-----|-----|-----|
-| Standard GA (20 Repeats)    | 0  | 1 | 1 | 1 | 
+| Standard GA (20 Repeats)    | 2.968  | 18.156 | 95.070 | 1.760 | 
 
 ## Conclusions 
 
