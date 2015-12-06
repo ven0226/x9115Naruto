@@ -42,6 +42,7 @@ class ga():
             new_frontier = self.get_new_frontier(mod,selection_pool) # perform crossover
             mutated_frontier = self.do_mutation(mod,new_frontier) # mutated some candidates
             cur_era = self.fitting(mod,mutated_frontier) #average
+
             if not Utility.better(prev_era,cur_era):
                 lives -= 1
             if lives is 0:

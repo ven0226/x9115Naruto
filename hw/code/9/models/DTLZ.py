@@ -10,7 +10,9 @@ class DTLZ1(Model):
     no_objectives = 2
     decisions = []
     name = "DTLZ1"
-    def __init__(self):
+    def __init__(self,decs=10,objs=2):
+        self.no_decisions = decs
+        self.no_objectives = objs
         lo = [0]
         hi = [1]
         for i in range(self.no_decisions):
@@ -26,21 +28,18 @@ class DTLZ1(Model):
 
         return g_val
 
-    def f1(self,can):
-        val = 0.5 * (1 * self.g(can))
-
-        for x in can[:-1]:
-            val *= x
-
-        return val
-
-    def f2(self,can):
-        return 0.5 *  (1 - can[0]) * (1.0 + self.g(can))
-
     def objs(self,can):
         objectives = []
-        objectives.append(self.f1(can))
-        objectives.append(self.f2(can))
+        g_val = self.g(can)
+        for i in range(self.no_objectives):
+            val = (1 + g_val)
+            x = 0
+            for _ in range(len(can) - 1 - i):
+                val *= can[x]
+                x += 1
+            if (x + 1) < len(can):
+                val *= (1-can[x+1])
+            objectives.append(val)
         return objectives
 
     def score(self,can):
@@ -52,7 +51,9 @@ class DTLZ3(Model):
     no_objectives = 4
     decisions = []
     name = "DTLZ3"
-    def __init__(self):
+    def __init__(self,decs=10,objs=2):
+        self.no_decisions = decs
+        self.no_objectives = objs
         lo = [0]
         hi = [1]
         for i in range(self.no_decisions):
@@ -86,7 +87,9 @@ class DTLZ5(Model):
     no_objectives = 6
     decisions = []
     name = "DTLZ5"
-    def __init__(self):
+    def __init__(self,decs=10,objs=2):
+        self.no_decisions = decs
+        self.no_objectives = objs
         lo = [0]
         hi = [1]
         for i in range(self.no_decisions):
@@ -122,7 +125,9 @@ class DTLZ7(Model):
     no_objectives = 8
     decisions = []
     name = "DTLZ7"
-    def __init__(self):
+    def __init__(self,decs=10,objs=2):
+        self.no_decisions = decs
+        self.no_objectives = objs
         lo = [0]
         hi = [1]
         for i in range(self.no_decisions):
