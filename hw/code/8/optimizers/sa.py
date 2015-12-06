@@ -11,19 +11,20 @@ def sa(mod):
     sb = s[:]
     eb = e
     k = 1.0
-    kmax = 1499.0
+    kmax = 999.0
     lives = 5
     Utility.say("1|")
-    prev = mod.default_objs()
+    prev = []
     cur = []
     while k < kmax:
       sn = mod.generate()
       norm, en = mod.get_energy(sn,norm)
-      if en < eb:
+
+      if Utility.check_type1(mod,sn,sb):
         sb = sn[:]
         eb = en
         Utility.say("!")
-      if en < e:
+      if Utility.check_type1(mod,sn,s):
         s = sn[:]
         e = en
         Utility.say("+")
@@ -32,17 +33,18 @@ def sa(mod):
         e = en
         Utility.say("?")
       Utility.say(".")
-      cur.append(mod.objs(sb))
+      cur.append(en)
 
       k = k + 1
-      if k % 100 == 0:
-        cur = map(Utility.mean, zip(*cur))
-        if Utility.better(prev,cur):
-            lives -= 1
+      if k % 50 == 0:
+        #cur = map(Utility.mean, zip(*cur))
+        if not prev:
+            prev = cur[:]
+        else:
+            lives += Utility.check_type2(prev,cur)
+            prev = cur[:]
         if lives is 0:
             break
-        else:
-            prev = cur[:]
         cur = []
         Utility.say("\n"+str(int(k))+"|")
 

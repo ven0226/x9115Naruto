@@ -15,8 +15,8 @@ if __name__ == '__main__':
         for i,optimizer in enumerate([sa,mws,de]):
             opt_rpt = []
             opt_rpt.append(optimizer.func_name)
-            for _ in range(repeats):
-                print "\nStarting Model = %s Optimizer = %s \n" % (mod.name,str(optimizer.func_name))
+            for j in range(repeats):
+                print "\nStarting Model = %s Optimizer = %s Repeat No = %s \n" % (mod.name,str(optimizer.func_name),str(j+1))
                 baseline = optimizer(mod)
                 opt_rpt.append(mod.score(baseline))
             data.append(opt_rpt)

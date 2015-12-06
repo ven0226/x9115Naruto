@@ -34,4 +34,4 @@ class DTLZ7(Model):
     def objs(self,can):
         obj1 = self.f1(can)
         obj2 = self.f2(can)
-        return obj1,obj2
+        return [obj1,obj2]

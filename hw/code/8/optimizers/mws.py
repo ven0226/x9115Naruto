@@ -5,9 +5,10 @@ from helper.Utility import Utility
 
 
 def mutate(mod,can,index):
+    local = can[:]
     dec = mod.decisons[index]
-    can[index] = random.uniform(dec.lo,dec.hi)
-    return can
+    local[index] = random.uniform(dec.lo,dec.hi)
+    return local
 
 def maximizesolution(mod,sn,index,norm):
     bestSn = sn[:]
@@ -28,21 +29,21 @@ def maximizesolution(mod,sn,index,norm):
     return changed, bestSn
 
 def mws(mod):
-    max_tries = 100
+    max_tries = 25
     max_changes = 100
-    threshold = 0.001
+    threshold = 0.01
     p = 0.05
     lives = 3
     best_sn = mod.generate()
     norm = mod.baseline_study()
     norm, best_sc = mod.get_energy(best_sn,norm)
 
-    prev = mod.default_objs()
+    prev = []
     k = 1
-    Utility.say(str(k)+"|")
     for i in range(max_tries):
         sn = mod.generate()
         cur = []
+        Utility.say(str(k)+"|")
         for j in range(max_changes):
             norm,score = mod.get_energy(sn,norm)
             if score < threshold:
@@ -50,7 +51,7 @@ def mws(mod):
                 norm,score = mod.get_energy(sn,norm)
                 best_sn = sn[:]
                 best_sc = score
-                Utility.printOutput("Success", f1,f2,best_sn,best_sc)
+                Utility.printOutput("Success", f1,f2,best_sn,f1+f2)
                 return best_sn
             limit = len(mod.decisons)-1 if len(mod.decisons) > 0 else 0
             c = random.randint(0,limit)
@@ -62,26 +63,27 @@ def mws(mod):
                 else:
                     Utility.say('.')
             else:
-                changed, local_sn = maximizesolution(mod,sn,c,norm)
+                changed, sn = maximizesolution(mod,sn,c,norm)
                 if changed:
-                    norm,local_sc = mod.get_energy(local_sn,norm)
-                    if local_sc < best_sc:
+                    norm,local_sc = mod.get_energy(sn,norm)
+                    if Utility.check_type1(mod,sn,best_sn):
                         best_sc = local_sc
-                        best_sn = local_sn[:]
-                    sn = local_sn[:]
+                        best_sn = sn[:]
+                    sn = sn[:]
                     Utility.say('+')
                 else:
-                    Utility.say('.')
-            cur.append(mod.objs(sn))
-        cur = map(Utility.mean, zip(*cur))
-        if Utility.better(prev,cur):
-            lives -= 1
+                    Utility.say('!')
+            norm,local_sc = mod.get_energy(sn,norm)
+            cur.append(local_sc)
+        if not prev:
+            prev = cur[:]
+        else:
+            lives += Utility.check_type2(prev,cur)
+            prev = cur[:]
         if lives is 0:
             break
-        else:
-            prev = cur[:]
         k += max_changes
-        Utility.say("\n"+str(int(k))+"|")
+        Utility.say("\n")
     f1,f2 = mod.objs(sn)
-    Utility.printOutput('Failure',f1,f2,best_sn,best_sc)
+    Utility.printOutput('Failure',f1,f2,best_sn,f1+f2)
     return best_sn

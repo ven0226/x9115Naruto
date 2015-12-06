@@ -1,6 +1,7 @@
 __author__ = 'Venkatesh'
 
 import sys
+from helper.sk import *
 
 class Utility:
 
@@ -28,3 +29,27 @@ class Utility:
             if not cur[i] < prev[i]:
                 return False
         return True
+
+    @staticmethod
+    def check_type1(mod,X,Y):
+        objs_x = mod.objs(X)
+        objs_y = mod.objs(Y)
+        bettered = False
+        for i, (Xi, Yi) in enumerate(zip(objs_x,objs_y)):
+            if Utility.lt(Xi,Yi):
+                bettered = True
+            else:
+                return False
+        return  bettered
+
+    @staticmethod
+    def lt(x,y):
+        return x < y
+
+    @staticmethod
+    def check_type2(era,era_1):
+        val  = a12(era,era_1)
+        if val > 0.54:
+            return 2
+        else:
+            return -1
