@@ -10,9 +10,8 @@
 ### Algorithm:
 
 #### Simulated Annealing
-    Simulated annealing (SA) is a method for solving unconstrained and bound-constrained optimization problems. The method models the physical process of heating a material and then slowly lowering the temperature to decrease defects, thus minimizing the system energy.
-    <br>
-    At each iteration of the simulated annealing algorithm, a new point is randomly generated. The distance of the new point from the current point, or the extent of the search, is based on a probability distribution with a scale proportional to the temperature. The algorithm accepts all new points that lower the objective, but also, with a certain probability, points that raise the objective. By accepting points that raise the objective, the algorithm avoids being trapped in local minima in early iterations and is able to explore globally for better solutions.
+Simulated annealing (SA) is a method for solving unconstrained and bound-constrained optimization problems. The method models the physical process of heating a material and then slowly lowering the temperature to decrease defects, thus minimizing the system energy.<br>
+At each iteration of the simulated annealing algorithm, a new point is randomly generated. The distance of the new point from the current point, or the extent of the search, is based on a probability distribution with a scale proportional to the temperature. The algorithm accepts all new points that lower the objective, but also, with a certain probability, points that raise the objective. By accepting points that raise the objective, the algorithm avoids being trapped in local minima in early iterations and is able to explore globally for better solutions.
 #### MaxWalkSat
 
 #### Differential Evolution
@@ -36,11 +35,6 @@
     + If no improvement on anything,
          + Lives - 1
 #### Type3
-
-    Compare with the stats methods discussed last week.
-    
-    Warning:
-    
     + When comparing N optimizers for R repeats....\
         + For each repeat, generate one new baseline, then...
              + Run each optimizer for each repeat.
