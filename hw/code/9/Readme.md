@@ -30,10 +30,7 @@ repeat for i generations
             reduce lives
          If ran out of lives, terminate 
 ```
-
 ## Experiments:  
-
-### Models:
 
 #### Setup
 
@@ -88,11 +85,14 @@ Table : DTLZ7 Hypervolume
 
 
 ## Threat to Validity
-
+* Not enough repeats to test stability
+* No additional lives given ifthe objectives are better
 
 ## Conclusions 
 
 ## Future Work:
    
    
-## References:
+## Appendix:
+
+Detailed results are available [here](./Data)
