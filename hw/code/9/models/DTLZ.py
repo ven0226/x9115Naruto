@@ -20,10 +20,9 @@ class DTLZ1(Model):
 
     def g(self,can):
         g_val = 0
-        for x in can:
+        for x in can[self.no_objectives-1:]:
             g_val += math.pow((x-0.5),2) - math.cos(20*math.pi*(x-0.5))
-        g_val += len(can)
-
+        g_val += self.no_decisions-self.no_objectives+1
         g_val *= 100
 
         return g_val
@@ -31,14 +30,15 @@ class DTLZ1(Model):
     def objs(self,can):
         objectives = []
         g_val = self.g(can)
+
         for i in range(self.no_objectives):
-            val = (1 + g_val)
+            val = 0.5*(1 + g_val)
             x = 0
-            for _ in range(len(can) - 1 - i):
-                val *= can[x]
+            for _ in range(self.no_objectives - 1 - i):
+                val *= can[_]
                 x += 1
-            if (x + 1) < len(can):
-                val *= (1-can[x+1])
+            if not i == 0:
+                val *= (1-can[self.no_objectives - i])
             objectives.append(val)
         return objectives
 
@@ -61,9 +61,9 @@ class DTLZ3(Model):
 
     def g(self,can):
         g_val = 0
-        for x in can:
+        for x in can[self.no_objectives-1:]:
             g_val += math.pow((x-0.5),2) - math.cos(20*math.pi*(x-0.5))
-        g_val += len(can)
+        g_val += self.no_decisions-self.no_objectives+1
         g_val *= 100
         return g_val
 
@@ -72,12 +72,13 @@ class DTLZ3(Model):
 
     def objs(self,can):
         objectives = []
+        g_val = self.g(can)
         for i in range(self.no_objectives):
-            val = (1 + self.g(can))
-            for x in range(len(can) - 1 - i):
-                val *= math.cos(x*(math.pi/2))
+            val = (1 + g_val)
+            for x in range(self.no_objectives - 1 - i):
+                val *= math.cos(can[x]*(math.pi/2))
             if i > 0:
-                val *= math.sin(x*(math.pi/2))
+                val *= math.sin(can[self.no_objectives - i]*(math.pi/2))
             objectives.append(val)
         return objectives
 
@@ -97,7 +98,7 @@ class DTLZ5(Model):
 
     def g(self,can):
         g_val = 0
-        for x in can:
+        for x in can[self.no_objectives-1:]:
             g_val += math.pow((x-0.5),2)
         return g_val
 
@@ -109,13 +110,13 @@ class DTLZ5(Model):
 
     def objs(self,can):
         objectives = []
+        g_val = self.g(can)
         for i in range(self.no_objectives):
-            g_val = self.g(can)
             val = (1 + g_val)
-            for x in range(len(can) - 1 - i):
-                val *= math.cos(self.theta(x,g_val)*(math.pi/2))
+            for x in range(self.no_objectives - 1 - i):
+                val *= math.cos(self.theta(can[x],g_val)*(math.pi/2))
             if i > 0:
-                val *= math.sin(self.theta(x,g_val)*(math.pi/2))
+                val *= math.sin(self.theta(can[self.no_objectives - i],g_val)*(math.pi/2))
             objectives.append(val)
         return objectives
 
@@ -138,16 +139,16 @@ class DTLZ7(Model):
 
     def fm(self,can):
         objectives = []
+
+        g = 1 + 9/(self.no_decisions-self.no_objectives+1) * sum(can[self.no_objectives-1:])
+
         for i in range(self.no_objectives - 1):
             objectives.append(can[i])
-        g = 1 + 9/len(can) * sum(can)
-
         def calch():
-            total = 0
-            for x in range(1): # no of objectives
-                total += (objectives[0]/(1+g))*(1 + math.sin(3*math.pi*objectives[0]))
-            total = len(can) - total
-            return total
+            h = self.no_objectives
+            for x in range(self.no_objectives-1): # no of objectives
+                h += (objectives[x]/(1+g))*(1 + math.sin(3*math.pi*objectives[x]))
+            return h
 
         objectives.append((1+g)*calch())
 

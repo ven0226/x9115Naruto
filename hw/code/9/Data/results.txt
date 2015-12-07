@@ -181,3 +181,148 @@ Starting Model = DTLZ7 Optimizer = ga
 # Average: 1.760 secs
 
 #################################################################
+
+/System/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7 /Users/Venkatesh/GitHub/x9115Naruto/hw/code/9/main.py
+# Repeat: 0
+Generations :  16
+Best Solution :  0.214744750491
+# Runtime: 4.519 secs
+# Repeat: 1
+Generations :  21
+Best Solution :  5.39930499697e-05
+# Runtime: 9.718 secs
+# Repeat: 2
+Generations :  16
+Best Solution :  1.43041600696e-08
+# Runtime: 10.348 secs
+# Repeat: 3
+Generations :  16
+Best Solution :  8.5255306986e-13
+# Runtime: 13.263 secs
+# Repeat: 4
+Generations :  19
+Best Solution :  1.28735299996e-17
+# Runtime: 19.309 secs
+# Repeat: 5
+Generations :  16
+Best Solution :  1.65201127559e-21
+# Runtime: 19.284 secs
+# Repeat: 6
+Generations :  16
+Best Solution :  1.21137712331e-24
+# Runtime: 22.157 secs
+# Repeat: 7
+Generations :  21
+Best Solution :  7.24497411825e-30
+# Runtime: 32.868 secs
+# Repeat: 8
+Generations :  19
+Best Solution :  1.41791304305e-32
+# Runtime: 33.515 secs
+# Repeat: 9
+Generations :  22
+Best Solution :  6.76384478359e-35
+# Runtime: 42.235 secs
+==================================================
+
+Starting Model = DTLZ1 Optimizer = GA No. of Decision = 10 No. of Objectives = 2
+
+# Average: 42.235 secs
+# Average Energy: 0.021
+==================================================
+# Repeat: 0
+Generations :  20
+Best Solution :  5.91160475771e-44
+# Runtime: 48.076 secs
+# Repeat: 1
+Generations :  17
+Best Solution :  2.75534452763e-55
+# Runtime: 45.205 secs
+# Repeat: 2
+Generations :  23
+Best Solution :  1.50072798264e-60
+# Runtime: 67.895 secs
+# Repeat: 3
+Generations :  17
+Best Solution :  5.83571080068e-67
+# Runtime: 55.951 secs
+# Repeat: 4
+Generations :  19
+Best Solution :  5.48547287855e-76
+# Runtime: 70.234 secs
+# Repeat: 5
+Generations :  23
+Best Solution :  2.33234855598e-82
+# Runtime: 94.688 secs
+# Repeat: 6
+Generations :  17
+Best Solution :  3.26375263745e-92
+# Runtime: 76.037 secs
+# Repeat: 7
+Generations :  18
+Best Solution :  9.72422269169e-101
+# Runtime: 87.183 secs
+# Repeat: 8
+Generations :  19
+Best Solution :  4.96202351687e-111
+# Runtime: 98.431 secs
+# Repeat: 9
+Generations :  21
+Best Solution :  1.35238589894e-121
+# Runtime: 116.503 secs
+==================================================
+
+Starting Model = DTLZ1 Optimizer = GA No. of Decision = 20 No. of Objectives = 2
+
+# Average: 116.503 secs
+# Average Energy: 0.000
+==================================================
+# Repeat: 0
+Generations :  19
+Best Solution :  1.2301645075e-137
+# Runtime: 117.009 secs
+# Repeat: 1
+Generations :  19
+Best Solution :  5.05405197403e-153
+# Runtime: 129.824 secs
+# Repeat: 2
+Generations :  18
+Best Solution :  3.23901992475e-172
+# Runtime: 137.402 secs
+# Repeat: 3
+Generations :  18
+Best Solution :  2.75243081124e-190
+# Runtime: 157.088 secs
+# Repeat: 4
+Generations :  17
+Best Solution :  1.25864888936e-199
+# Runtime: 156.436 secs
+# Repeat: 5
+Generations :  18
+Best Solution :  3.06162788914e-219
+# Runtime: 178.578 secs
+# Repeat: 6
+Generations :  20
+Best Solution :  1.68339764336e-240
+# Runtime: 212.498 secs
+# Repeat: 7
+Generations :  19
+Best Solution :  2.09634175191e-256
+# Runtime: 18874.864 secs
+# Repeat: 8
+Generations :  18
+Best Solution :  8.75305485731e-272
+# Runtime: 218.237 secs
+# Repeat: 9
+Generations :  16
+Best Solution :  6.08139395106e-288
+# Runtime: 204.413 secs
+==================================================
+
+Starting Model = DTLZ1 Optimizer = GA No. of Decision = 40 No. of Objectives = 2
+
+# Average: 204.413 secs
+# Average Energy: 0.000
+==================================================
+
+

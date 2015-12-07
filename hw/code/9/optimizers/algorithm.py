@@ -1,3 +1,4 @@
+from __future__ import division
 __author__ = 'Venkatesh'
 
 import random
@@ -22,7 +23,6 @@ class ga():
         return total/n
 
     def run(self,mod):
-        print "Runnning optimizer"
         frontier = []
         for _ in range(self.candidates):
             frontier.append(mod.generate())
@@ -49,6 +49,8 @@ class ga():
 
         print "Generations : ", generations
         print "Best Solution : ", sum(cur_era)
+
+        return sum(cur_era)
 
     def iDominate(self,mod,left,right):
         if mod.score(left) > mod.score(right):
