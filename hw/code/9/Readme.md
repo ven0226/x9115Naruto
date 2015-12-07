@@ -23,7 +23,7 @@ repeat for i generations
     mutate
         Introduce random “mutations” in some of the children based on mutation probability
     termination
-        compare current objective with previous objectives
+        compare current era mean objectives with previous era objectives
          if better
             continue
          else
@@ -31,15 +31,64 @@ repeat for i generations
          If ran out of lives, terminate 
 ```
 
-## Experiments:   
+## Experiments:  
+
+### Models:
+
+#### Setup
+
+ * Standard GA on 4 different models: DTLZ 1,3,5,7
+ * with decision numbers 10, 20, 40
+ * and objective numbers 2, 4, 6, 8
+ * repeat 4 times for each
+ * mutation rate: 0.05
+ * crossover: one point
+ * number of candidates: 100
+ * number of maximum generations: 1000 (with early termination)
+ * early termination: life = 10, each new generation, if not better, life=life-1; else do nothing. Terminate when life = 0.
+
 
 ## Results: 
  
- Table : Performance results of the DLTZ 
+Table : DTLZ1 Hypervolume
 
-|Optimizer   | DLTZ1   |  DLTZ3 | DLTZ5  | DLTZ7  |
-|------------------------------|-----|-----|-----|-----|
-| Standard GA (20 Repeats)    | 2.968  | 18.156 | 95.070 | 1.760 | 
+|Objectives\Models   | 10   |  20 | 40  | 
+|------------------------------|-----|-----|-----|
+|  2  | 2.968  | 18.156 | 95.070 |
+|  4  | 2.968  | 18.156 | 95.070 |
+|  6  | 2.968  | 18.156 | 95.070 |
+|  8  | 2.968  | 18.156 | 95.070 |
+
+Table : DTLZ3 Hypervolume
+
+|Objectives\Models   | 10   |  20 | 40  | 
+|------------------------------|-----|-----|-----|
+|  2  | 2.968  | 18.156 | 95.070 |
+|  4  | 2.968  | 18.156 | 95.070 |
+|  6  | 2.968  | 18.156 | 95.070 |
+|  8  | 2.968  | 18.156 | 95.070 |
+
+Table : DTLZ5 Hypervolume
+
+|Objectives\Models   | 10   |  20 | 40  | 
+|------------------------------|-----|-----|-----|
+|  2  | 2.968  | 18.156 | 95.070 |
+|  4  | 2.968  | 18.156 | 95.070 |
+|  6  | 2.968  | 18.156 | 95.070 |
+|  8  | 2.968  | 18.156 | 95.070 |
+
+Table : DTLZ7 Hypervolume
+
+|Objectives\Models   | 10   |  20 | 40  | 
+|------------------------------|-----|-----|-----|
+|  2  | 1.0  | 1.0 | 1.0 |
+|  4  | 7.51339e-01  | 1.0 | 1.0 |
+|  6  | 6.89056e-01   | 9.00321e-01  | 1.0 |
+|  8  | 7.45424e-01  | 8.81647e-01 | 1.0 |
+
+
+## Threat to Validity
+
 
 ## Conclusions 
 
