@@ -27,6 +27,15 @@ class Utility:
     def better(prev,cur):
         for i in range(len(prev)):
             if not cur[i] < prev[i]:
+                return -1
+        return 0
+
+    @staticmethod
+    def compare(mod,prev,cur):
+        prev_objs = mod.objs(prev)
+        cur_objs = mod.objs(cur)
+        for i in range(len(prev_objs)):
+            if not prev_objs[i] < cur_objs[i]:
                 return False
         return True
 

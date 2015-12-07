@@ -26,12 +26,11 @@ class ga():
         frontier = []
         for _ in range(self.candidates):
             frontier.append(mod.generate())
-        eb = self.init_score(mod,frontier)
-        can = []
-        index = None
-        prev_era = mod.default_objs()
-        cur_era = []
-        lives = 5
+        generations = 0
+
+        lives = 10
+        baseline = frontier[:]
+        prev_era = self.fitting(mod,baseline)
         for i in range(self.generations):
             to_select_sample = self.select(mod,frontier) # binary denomination score of all pairs
             sorted_sample = OrderedDict(sorted(to_select_sample.items(), key=lambda t: t[1],reverse=True)) # sorted by the scores
@@ -42,13 +41,15 @@ class ga():
             new_frontier = self.get_new_frontier(mod,selection_pool) # perform crossover
             mutated_frontier = self.do_mutation(mod,new_frontier) # mutated some candidates
             cur_era = self.fitting(mod,mutated_frontier) #average
-
-            if not Utility.better(prev_era,cur_era):
-                lives -= 1
+            generations += 1
+            lives += Utility.better(prev_era,cur_era)
+            prev_era = cur_era[:]
             if lives is 0:
                 break
-            else:
-                prev_era = cur_era[:]
+
+        print "Generations : ", generations
+        print "Best Solution : ", sum(cur_era)
+
     def iDominate(self,mod,left,right):
         if mod.score(left) > mod.score(right):
             return True
@@ -60,7 +61,7 @@ class ga():
         for left in frontier:
             count = 0
             for right in frontier:
-                if self.iDominate(mod,left,right):
+                if Utility.compare(mod,left,right):
                     count += 1
             binary_result[can_id] = count
             can_id += 1
@@ -110,6 +111,7 @@ class ga():
     def fitting(self,mod,cur_frontier):
         cur_fitting = []
         for can in cur_frontier:
-            cur_fitting.append(mod.objs(can))
+            objs_c = mod.objs(can)
+            cur_fitting.append(objs_c)
         cur_fitting = map(Utility.mean, zip(*cur_fitting))
         return cur_fitting

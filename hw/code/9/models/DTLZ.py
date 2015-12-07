@@ -138,7 +138,7 @@ class DTLZ7(Model):
 
     def fm(self,can):
         objectives = []
-        for i in range(self.no_decisions - 1):
+        for i in range(self.no_objectives - 1):
             objectives.append(can[i])
         g = 1 + 9/len(can) * sum(can)
 
