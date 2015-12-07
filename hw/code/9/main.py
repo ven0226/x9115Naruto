@@ -9,7 +9,7 @@ if __name__ == '__main__':
     repeats = 1
     objs = [2,4,6,8]
     decs = [10,20,40]
-    for model in [DTLZ1,DTLZ3,DTLZ5,DTLZ7]:
+    for model in [DTLZ5,DTLZ7]:
         #opt_rpt.append(ga.name)
 
         for obj in objs:
