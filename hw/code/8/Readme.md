@@ -1,6 +1,6 @@
 #Code 8
 
-# Types of "less than" for Optimizers
+# Implementing Types of "less than" for Optimizers
 
 ## I. Abstract:
     
@@ -11,8 +11,22 @@
 
 #### Simulated Annealing
 Simulated annealing (SA) is a method for solving unconstrained and bound-constrained optimization problems. The method models the physical process of heating a material and then slowly lowering the temperature to decrease defects, thus minimizing the system energy.<br>
-At each iteration of the simulated annealing algorithm, a new point is randomly generated. The distance of the new point from the current point, or the extent of the search, is based on a probability distribution with a scale proportional to the temperature. The algorithm accepts all new points that lower the objective, but also, with a certain probability, points that raise the objective. By accepting points that raise the objective, the algorithm avoids being trapped in local minima in early iterations and is able to explore globally for better solutions.
+* A baseline study is generated
+* At each iteration of the simulated annealing algorithm, a new candidate is randomly generated. 
+* Type 1 comparison is performed between the best solution and new candidate 
+    * If the new candidate is better update best solution
+* Type 1 comparison is performed between the new candidate and local solution
+    * If the new candidate is better update local solution
+* After the era size
+    * Type2 comparison between era and era - 1
+* Exit 
+    * if ran out of lives
+    * if optimum energy is reached
+    * if ran out of generations
+
 #### MaxWalkSat
+
+MaxWalkSat is a non-parametric stochastic method for sampling the landscape of the local region. Historically speaking, MaxWalkSat was a very impactful algorithm. But, at least here, the real purpose of discussing MaxWalkSat is to introduce the idea of landscapes. It will be argued that more important than the algorithms is the shape of the space they search. Since this shape can change, it is not possible to prove the adequacy of these meta-heuristics unless you first characterize the space they are trying to explore.
 
 #### Differential Evolution
 
