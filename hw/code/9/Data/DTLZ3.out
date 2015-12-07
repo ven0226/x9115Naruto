@@ -1,0 +1,396 @@
+min =  27.3631155833
+max =  3167.14169824
+# Repeat: 0
+Generations :  13
+Best Solution :  966.124419856
+energy =  966.124419856
+norm 0.298989651518
+# Runtime: 4.743 secs
+# Repeat: 1
+Generations :  12
+Best Solution :  923.235068296
+energy =  923.235068296
+norm 0.285329659123
+# Runtime: 6.109 secs
+# Repeat: 2
+Generations :  16
+Best Solution :  938.098084004
+energy =  938.098084004
+norm 0.290063437419
+# Runtime: 9.685 secs
+# Repeat: 3
+Generations :  14
+Best Solution :  920.063094219
+energy =  920.063094219
+norm 0.284319405058
+# Runtime: 9.831 secs
+==================================================
+
+Starting Model = DTLZ3 Optimizer = GA No. of Decision = 10 No. of Objectives = 2 
+
+# Average: 9.831 secs
+# Average Energy: 2.89676e-01 
+==================================================
+min =  30.4895941414
+max =  7271.67361384
+# Repeat: 0
+Generations :  14
+Best Solution :  2312.23830584
+energy =  2312.23830584
+norm 0.315107129647
+# Runtime: 16.617 secs
+# Repeat: 1
+Generations :  14
+Best Solution :  2264.19774446
+energy =  2264.19774446
+norm 0.308472777966
+# Runtime: 20.064 secs
+# Repeat: 2
+Generations :  15
+Best Solution :  2751.05025706
+energy =  2751.05025706
+norm 0.37570660482
+# Runtime: 25.052 secs
+# Repeat: 3
+Generations :  13
+Best Solution :  2708.32468216
+energy =  2708.32468216
+norm 0.369806247257
+# Runtime: 24.828 secs
+==================================================
+
+Starting Model = DTLZ3 Optimizer = GA No. of Decision = 20 No. of Objectives = 2 
+
+# Average: 24.828 secs
+# Average Energy: 3.42273e-01 
+==================================================
+min =  240.724026635
+max =  16835.9423849
+# Repeat: 0
+Generations :  14
+Best Solution :  4488.53505369
+energy =  4488.53505369
+norm 0.255965961722
+# Runtime: 40.878 secs
+# Repeat: 1
+Generations :  13
+Best Solution :  5446.04524035
+energy =  5446.04524035
+norm 0.313663918205
+# Runtime: 43.557 secs
+# Repeat: 2
+Generations :  13
+Best Solution :  5228.49560396
+energy =  5228.49560396
+norm 0.300554742315
+# Runtime: 49.873 secs
+# Repeat: 3
+Generations :  14
+Best Solution :  5332.84597389
+energy =  5332.84597389
+norm 0.306842720435
+# Runtime: 62.068 secs
+==================================================
+
+Starting Model = DTLZ3 Optimizer = GA No. of Decision = 40 No. of Objectives = 2 
+
+# Average: 62.068 secs
+# Average Energy: 2.94257e-01 
+==================================================
+min =  -563.615105898
+max =  16600.613728
+# Repeat: 0
+Generations :  12
+Best Solution :  3249.69529133
+energy =  3249.69529133
+norm 0.222166135987
+# Runtime: 56.655 secs
+# Repeat: 1
+Generations :  14
+Best Solution :  3126.67770255
+energy =  3126.67770255
+norm 0.214999045059
+# Runtime: 69.214 secs
+# Repeat: 2
+Generations :  11
+Best Solution :  4263.18636817
+energy =  4263.18636817
+norm 0.281212836346
+# Runtime: 55.629 secs
+# Repeat: 3
+Generations :  11
+Best Solution :  3389.98381339
+energy =  3389.98381339
+norm 0.230339443593
+# Runtime: 54.895 secs
+==================================================
+
+Starting Model = DTLZ3 Optimizer = GA No. of Decision = 10 No. of Objectives = 4 
+
+# Average: 54.895 secs
+# Average Energy: 2.37179e-01 
+==================================================
+min =  664.718926824
+max =  23342.801066
+# Repeat: 0
+Generations :  12
+Best Solution :  5730.33305448
+energy =  5730.33305448
+norm 0.223370481532
+# Runtime: 65.514 secs
+# Repeat: 1
+Generations :  11
+Best Solution :  5844.19339938
+energy =  5844.19339938
+norm 0.228391203487
+# Runtime: 64.010 secs
+# Repeat: 2
+Generations :  12
+Best Solution :  5334.47408258
+energy =  5334.47408258
+norm 0.205914906168
+# Runtime: 71.773 secs
+# Repeat: 3
+Generations :  11
+Best Solution :  5522.40009977
+energy =  5522.40009977
+norm 0.214201586498
+# Runtime: 69.416 secs
+==================================================
+
+Starting Model = DTLZ3 Optimizer = GA No. of Decision = 20 No. of Objectives = 4 
+
+# Average: 69.416 secs
+# Average Energy: 2.17970e-01 
+==================================================
+min =  1145.6825185
+max =  31031.6296914
+# Repeat: 0
+Generations :  11
+Best Solution :  8340.866079
+energy =  8340.866079
+norm 0.24075474399
+# Runtime: 78.743 secs
+# Repeat: 1
+Generations :  14
+Best Solution :  8756.60063877
+energy =  8756.60063877
+norm 0.254665447819
+# Runtime: 107.000 secs
+# Repeat: 2
+Generations :  11
+Best Solution :  9158.16207396
+energy =  9158.16207396
+norm 0.268101911213
+# Runtime: 91.042 secs
+# Repeat: 3
+Generations :  11
+Best Solution :  10822.2479244
+energy =  10822.2479244
+norm 0.323783126226
+# Runtime: 96.747 secs
+==================================================
+
+Starting Model = DTLZ3 Optimizer = GA No. of Decision = 40 No. of Objectives = 4 
+
+# Average: 96.747 secs
+# Average Energy: 2.71826e-01 
+==================================================
+min =  524.529920926
+max =  26647.7649845
+# Repeat: 0
+Generations :  14
+Best Solution :  6889.05530976
+energy =  6889.05530976
+norm 0.24363465602
+# Runtime: 126.608 secs
+# Repeat: 1
+Generations :  11
+Best Solution :  4983.59454334
+energy =  4983.59454334
+norm 0.170693431023
+# Runtime: 99.911 secs
+# Repeat: 2
+Generations :  11
+Best Solution :  7625.83733161
+energy =  7625.83733161
+norm 0.271838744069
+# Runtime: 101.070 secs
+# Repeat: 3
+Generations :  12
+Best Solution :  6557.58968665
+energy =  6557.58968665
+norm 0.230946119462
+# Runtime: 113.361 secs
+==================================================
+
+Starting Model = DTLZ3 Optimizer = GA No. of Decision = 10 No. of Objectives = 6 
+
+# Average: 113.361 secs
+# Average Energy: 2.29278e-01 
+==================================================
+min =  568.972057553
+max =  32298.3732922
+# Repeat: 0
+Generations :  11
+Best Solution :  8938.25396349
+energy =  8938.25396349
+norm 0.263770559174
+# Runtime: 107.646 secs
+# Repeat: 1
+Generations :  11
+Best Solution :  8576.55827233
+energy =  8576.55827233
+norm 0.252371173208
+# Runtime: 112.020 secs
+# Repeat: 2
+Generations :  11
+Best Solution :  8841.48918635
+energy =  8841.48918635
+norm 0.260720871081
+# Runtime: 115.520 secs
+# Repeat: 3
+Generations :  11
+Best Solution :  9874.64021645
+energy =  9874.64021645
+norm 0.293282186136
+# Runtime: 115.642 secs
+==================================================
+
+Starting Model = DTLZ3 Optimizer = GA No. of Decision = 20 No. of Objectives = 6 
+
+# Average: 115.642 secs
+# Average Energy: 2.67536e-01 
+==================================================
+min =  722.025444812
+max =  50485.4353166
+# Repeat: 0
+Generations :  11
+Best Solution :  10785.0258214
+energy =  10785.0258214
+norm 0.202216857778
+# Runtime: 128.135 secs
+# Repeat: 1
+Generations :  12
+Best Solution :  11958.8197269
+energy =  11958.8197269
+norm 0.225804347232
+# Runtime: 143.686 secs
+# Repeat: 2
+Generations :  10
+Best Solution :  13962.7917876
+energy =  13962.7917876
+norm 0.266074338092
+# Runtime: 125.115 secs
+# Repeat: 3
+Generations :  11
+Best Solution :  14217.674293
+energy =  14217.674293
+norm 0.271196223951
+# Runtime: 143.708 secs
+==================================================
+
+Starting Model = DTLZ3 Optimizer = GA No. of Decision = 40 No. of Objectives = 6 
+
+# Average: 143.708 secs
+# Average Energy: 2.41323e-01 
+==================================================
+min =  624.445435996
+max =  37126.2299163
+# Repeat: 0
+Generations :  10
+Best Solution :  10858.0774323
+energy =  10858.0774323
+norm 0.280359772598
+# Runtime: 134.631 secs
+# Repeat: 1
+Generations :  11
+Best Solution :  8552.89852997
+energy =  8552.89852997
+norm 0.21720727375
+# Runtime: 149.228 secs
+# Repeat: 2
+Generations :  12
+Best Solution :  9230.70851277
+energy =  9230.70851277
+norm 0.235776502418
+# Runtime: 162.189 secs
+# Repeat: 3
+Generations :  11
+Best Solution :  10074.5485563
+energy =  10074.5485563
+norm 0.258894277496
+# Runtime: 151.945 secs
+==================================================
+
+Starting Model = DTLZ3 Optimizer = GA No. of Decision = 10 No. of Objectives = 8 
+
+# Average: 151.945 secs
+# Average Energy: 2.48059e-01 
+==================================================
+min =  913.07868505
+max =  44309.3774096
+# Repeat: 0
+Generations :  10
+Best Solution :  12446.9492907
+energy =  12446.9492907
+norm 0.265780053707
+# Runtime: 141.360 secs
+# Repeat: 1
+Generations :  11
+Best Solution :  10467.6079717
+energy =  10467.6079717
+norm 0.220169221049
+# Runtime: 160.149 secs
+# Repeat: 2
+Generations :  10
+Best Solution :  11767.4365116
+energy =  11767.4365116
+norm 0.250121741844
+# Runtime: 146.187 secs
+# Repeat: 3
+Generations :  11
+Best Solution :  13313.2024646
+energy =  13313.2024646
+norm 0.285741506626
+# Runtime: 163.545 secs
+==================================================
+
+Starting Model = DTLZ3 Optimizer = GA No. of Decision = 20 No. of Objectives = 8 
+
+# Average: 163.545 secs
+# Average Energy: 2.55453e-01 
+==================================================
+min =  1217.42405489
+max =  61511.7109903
+# Repeat: 0
+Generations :  11
+Best Solution :  16029.2669485
+energy =  16029.2669485
+norm 0.245659143617
+# Runtime: 177.289 secs
+# Repeat: 1
+Generations :  11
+Best Solution :  14689.6741674
+energy =  14689.6741674
+norm 0.223441569628
+# Runtime: 181.163 secs
+# Repeat: 2
+Generations :  11
+Best Solution :  17192.0884769
+energy =  17192.0884769
+norm 0.26494490994
+# Runtime: 186.227 secs
+# Repeat: 3
+Generations :  11
+Best Solution :  16703.8776596
+energy =  16703.8776596
+norm 0.256847777656
+# Runtime: 190.210 secs
+==================================================
+
+Starting Model = DTLZ3 Optimizer = GA No. of Decision = 40 No. of Objectives = 8 
+
+# Average: 190.210 secs
+# Average Energy: 2.47723e-01 
+==================================================
