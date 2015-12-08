@@ -18,12 +18,12 @@ def update(mod,f,cf,frontier,eb, total=0.0, n=0):
         sc = mod.score(x)
         new = extrapolate(frontier,x,f,cf,i,mod)
         new_sc = mod.score(new)
-        if new_sc < eb:
+        if new_sc > eb:
             Utility.say('?')
             eb = sc = new_sc
             frontier[i] = new[:]
             ib = i
-        elif new_sc < sc:
+        elif new_sc > sc:
             Utility.say('+')
             sc = new_sc
             frontier[i] = new[:]
@@ -87,24 +87,24 @@ def de(mod,frontier_size,max_tries,cf):
     f = 0.75
     epsilon = 0.1
     lives = 3
-    ib = -1
+    ib = 0
     frontier = generate_frontier(frontier_size,mod)
     eb = sys.maxint
     prev = [sys.maxint]*mod.no_objectives
     lives = 5
     p = 1
     for k in range(max_tries):
-        Utility.say(str(p)+"|")
+        Utility.say(str(p)+"|"+"Best Hyper = " + str(eb) + "Best Solution = " + str(frontier[ib]))
         total,n,eb,ib,frontier,cur = update(mod,f,cf,frontier,eb)
-        if cur < prev:
+        if cur > prev:
             prev = cur
         else:
             lives -= 1
         if lives is 0:
             break
-        p += max_tries
+        p += frontier_size
         Utility.say("\n")
-    f1,f2 = mod.objs(frontier[ib])
-    Utility.printOutput("Success",f1,f2,frontier[ib],eb)
+    f1 = mod.objs(frontier[ib])
+    Utility.printOutput("Success",f1,frontier[ib],eb)
     return frontier[ib]
 
