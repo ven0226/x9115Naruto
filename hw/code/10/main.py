@@ -4,7 +4,7 @@ from models.DTLZ import *
 from optimizers.de import de
 from helper.sk import *
 import time
-
+'''
 def getRandomSetting():
     setting = []
     setting.append(r.randrange(50,150,1))
@@ -51,7 +51,7 @@ if __name__ == '__main__':
                 mod = model(dec,obj)
                 min,max = mod.baseline_study()
                 for _ in range(repeats):
-                    #print "\nStarting Model = %s Optimizer = %s \n" % (mod.name,str("ga"))
+                    #print "Starting Model = %s Optimizer = %s \n" % (mod.name,str("ga"))
                     print "-"*50
                     t1 = time.time()
                     e = ga(optimalSetting[0],optimalSetting[1],optimalSetting[2]).run(mod)
@@ -76,3 +76,4 @@ if __name__ == '__main__':
                 print("# Average Energy: %.5e " % (avg_energy))
                 print "="*50
     
+'''
