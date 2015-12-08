@@ -16,6 +16,7 @@ def sa(mod):
     Utility.say("1|")
     prev = mod.default_objs()
     cur = []
+    status = "Success"
     while k < kmax:
       sn = mod.generate()
       norm, en = mod.get_energy(sn,norm)
@@ -40,6 +41,7 @@ def sa(mod):
         if Utility.better(prev,cur):
             lives -= 1
         if lives is 0:
+            status = "Terminated"
             break
         else:
             prev = cur[:]
@@ -47,5 +49,5 @@ def sa(mod):
         Utility.say("\n"+str(int(k))+"|")
 
     f1,f2 = mod.objs(sb)
-    Utility.printOutput('Success',f1,f2,sb,f1+f2)
+    Utility.printOutput(status,f1,f2,sb,f1+f2)
     return sb

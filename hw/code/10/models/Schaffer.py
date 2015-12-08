@@ -8,6 +8,8 @@ from model import Model
 class Schaffer(Model):
     name = "Shaffer"
     decisons = []
+    no_objectives = 2
+    no_decisions = 1
     def __init__(self):
         lo = [-math.pow(10,5)]
         hi = [math.pow(10,5)]

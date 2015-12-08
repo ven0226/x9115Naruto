@@ -2,13 +2,12 @@ from __future__ import division
 __author__ = 'Venkatesh'
 
 import random
-import operator
 from helper.Utility import Utility
 from collections import OrderedDict
 
 class ga():
     candidates = 100
-    generations = 1000
+    generations = 100
     target = 0.00001
     mutate_prob = 0.1
     name = "ga"
@@ -28,7 +27,7 @@ class ga():
             frontier.append(mod.generate())
         generations = 0
 
-        lives = 10
+        lives = 5
         baseline = frontier[:]
         prev_era = self.fitting(mod,baseline)
         for i in range(self.generations):
@@ -42,15 +41,17 @@ class ga():
             mutated_frontier = self.do_mutation(mod,new_frontier) # mutated some candidates
             cur_era = self.fitting(mod,mutated_frontier) #average
             generations += 1
-            lives += Utility.better(prev_era,cur_era)
-            prev_era = cur_era[:]
+            ret_val = Utility.better(mod,prev_era,cur_era)
+            if ret_val > 0:
+                prev_era = cur_era[:]
+            lives += ret_val
             if lives is 0:
-                break
+                return prev_era
 
-        print "Generations : ", generations
-        print "Best Solution : ", sum(cur_era)
+            #print "Generations : ", generations
+        #print "Best Solution : ", sum(cur_era)
 
-        return sum(cur_era)
+        return cur_era
 
     def iDominate(self,mod,left,right):
         if mod.score(left) > mod.score(right):
@@ -63,7 +64,7 @@ class ga():
         for left in frontier:
             count = 0
             for right in frontier:
-                if Utility.compare(mod,left,right):
+                if Utility.compare(mod,mod.objs(left),mod.objs(right)):
                     count += 1
             binary_result[can_id] = count
             can_id += 1
@@ -115,5 +116,5 @@ class ga():
         for can in cur_frontier:
             objs_c = mod.objs(can)
             cur_fitting.append(objs_c)
-        cur_fitting = map(Utility.mean, zip(*cur_fitting))
+        #cur_fitting = map(Utility.mean, zip(*cur_fitting))
         return cur_fitting

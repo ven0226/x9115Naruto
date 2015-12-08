@@ -1,7 +1,8 @@
+from __future__ import division
 __author__ = 'Venkatesh'
 
+from itertools import islice
 import sys
-from helper.sk import *
 
 class Utility:
 
@@ -24,32 +25,25 @@ class Utility:
         return sum(a) / len(a)
 
     @staticmethod
-    def better(prev,cur):
-        for i in range(len(prev)):
+    def better(mod,prev,cur):
+        cur_fitting = map(Utility.mean, zip(*cur))
+        prev_fitting = map(Utility.mean, zip(*prev))
+        if Utility.compare(mod,cur_fitting,prev_fitting):
+           return 5
+        #print "failed"
+        return -1
+
+    @staticmethod
+    def compare(mod,cur,prev):
+        bettered = True
+        if cur == prev:
+            return False
+        for i in xrange(mod.no_objectives):
             if not cur[i] < prev[i]:
-                return False
-        return True
+                bettered = False
+        return bettered
 
     @staticmethod
-    def check_type1(mod,X,Y):
-        objs_x = mod.objs(X)
-        objs_y = mod.objs(Y)
-        bettered = False
-        for i, (Xi, Yi) in enumerate(zip(objs_x,objs_y)):
-            if Utility.lt(Xi,Yi):
-                bettered = True
-            else:
-                return False
-        return  bettered
-
-    @staticmethod
-    def lt(x,y):
-        return x < y
-
-    @staticmethod
-    def check_type2(era,era_1):
-        val  = a12(era,era_1)
-        if val > 0.54:
-            return 2
-        else:
-            return -1
+    def take(n, iterable):
+        "Return first n items of the iterable as a list"
+        return list(islice(iterable, n))

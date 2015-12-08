@@ -25,20 +25,23 @@ class Utility:
         return sum(a) / len(a)
 
     @staticmethod
-    def better(prev,cur):
-        for i in range(len(prev)):
-            if not cur[i] < prev[i]:
-                return -1
-        return 0
+    def better(mod,prev,cur):
+        cur_fitting = map(Utility.mean, zip(*cur))
+        prev_fitting = map(Utility.mean, zip(*prev))
+        if Utility.compare(mod,cur_fitting,prev_fitting):
+           return 5
+        #print "failed"
+        return -1
 
     @staticmethod
-    def compare(mod,prev,cur):
-        prev_objs = mod.objs(prev)
-        cur_objs = mod.objs(cur)
-        for i in range(len(prev_objs)):
-            if not prev_objs[i] < cur_objs[i]:
-                return False
-        return True
+    def compare(mod,cur,prev):
+        bettered = True
+        if cur == prev:
+            return False
+        for i in xrange(mod.no_objectives):
+            if not cur[i] < prev[i]:
+                bettered = False
+        return bettered
 
     @staticmethod
     def take(n, iterable):

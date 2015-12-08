@@ -9,6 +9,8 @@ class Kursawe(Model):
     name = "Kursawe"
     #decs = []
     decisons = []
+    no_objectives = 2
+    no_decisions = 3
     def __init__(self):
 
         lo = [-5,-5,-5]

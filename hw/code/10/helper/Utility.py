@@ -1,3 +1,4 @@
+from __future__ import division
 __author__ = 'Venkatesh'
 
 from itertools import islice
@@ -24,13 +25,44 @@ class Utility:
         return sum(a) / len(a)
 
     @staticmethod
-    def better(prev,cur):
-        for i in range(len(prev)):
+    def better(mod,prev,cur):
+        cur_fitting = map(Utility.mean, zip(*cur))
+        prev_fitting = map(Utility.mean, zip(*prev))
+        if Utility.compare(mod,cur_fitting,prev_fitting):
+           return True
+        #print "failed"
+        return False
+
+    @staticmethod
+    def compare(mod,cur,prev):
+        bettered = True
+        if cur == prev:
+            return False
+        for i in xrange(mod.no_objectives):
             if not cur[i] < prev[i]:
-                return False
-        return True
+                bettered = False
+        return bettered
 
     @staticmethod
     def take(n, iterable):
         "Return first n items of the iterable as a list"
         return list(islice(iterable, n))
+
+    @staticmethod
+    def write_to_file(mod,filename,frontier,min_objs,max_objs):
+        #print max_objs
+        #print min_objs
+        name='../Pareto_Fronts/'+filename
+        f=open(name,'w')
+        i=0
+
+        for can in frontier:
+            can_objs = mod.objs(can)
+
+            for i in xrange(mod.no_objectives):
+                norm_objs = (can_objs[i] - min_objs[i])/(max_objs[i] - min_objs[i])
+                s=str(norm_objs)
+                f.write(s)
+                f.write(" ")
+            f.write("\n")
+        f.close()

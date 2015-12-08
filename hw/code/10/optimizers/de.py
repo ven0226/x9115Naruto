@@ -2,6 +2,7 @@ from __future__ import division
 __author__ = 'Venkatesh'
 
 import random
+import sys
 from helper.Utility import Utility
 
 def generate_frontier(size,mod):
@@ -30,8 +31,8 @@ def update(mod,f,cf,frontier,eb, total=0.0, n=0):
             Utility.say('.')
         total += sc
         n += 1
-        cur.append(mod.objs(x))
-    cur = map(Utility.mean, zip(*cur))
+        cur.append(sc)
+    cur = sum(cur)/len(cur)
     return total,n,eb,ib,frontier,cur
 
 def extrapolate(frontier,one,f,cf,id,mod):
@@ -88,18 +89,19 @@ def de(mod,frontier_size,max_tries,cf):
     lives = 3
     ib = -1
     frontier = generate_frontier(frontier_size,mod)
-    eb = init_score(mod,frontier)
-    prev = mod.default_objs()
+    eb = sys.maxint
+    prev = [sys.maxint]*mod.no_objectives
     lives = 5
     p = 1
     for k in range(max_tries):
         Utility.say(str(p)+"|")
         total,n,eb,ib,frontier,cur = update(mod,f,cf,frontier,eb)
-        if Utility.better(prev,cur):
+        if cur < prev:
+            prev = cur
+        else:
             lives -= 1
         if lives is 0:
             break
-        prev = cur[:]
         p += max_tries
         Utility.say("\n")
     f1,f2 = mod.objs(frontier[ib])
