@@ -1,15 +1,13 @@
 from __future__ import division
-from StdSuites.AppleScript_Suite import ounces
-
 __author__ = 'Venkatesh'
 
-import math
 from optimizers.decs import Decisions
 from model import Model
 from Kursawe import Kursawe
 from optimizers.ga import ga
 from helper.Utility import *
 from helper.hypervolume_runner import *
+
 class GASetting(Model):
     name = "GASetting"
     no_objectives = 1
