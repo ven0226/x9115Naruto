@@ -11,8 +11,7 @@ def generate_frontier(size,mod):
         frontier.append(mod.generate())
     return frontier
 
-def update(mod,f,cf,frontier,eb, total=0.0, n=0):
-    ib = -1
+def update(mod,f,cf,ib,frontier,eb, total=0.0, n=0):
     cur = []
     for i,x in enumerate(frontier):
         sc = mod.score(x)
@@ -95,7 +94,7 @@ def de(mod,frontier_size,max_tries,cf):
     p = 1
     for k in range(max_tries):
         Utility.say(str(p)+"|"+"Best Hyper = " + str(eb) + "Best Solution = " + str(frontier[ib]))
-        total,n,eb,ib,frontier,cur = update(mod,f,cf,frontier,eb)
+        total,n,eb,ib,frontier,cur = update(mod,f,cf,ib,frontier,eb)
         if cur > prev:
             prev = cur
         else:
