@@ -6,7 +6,7 @@
     
 Algorithms like Simulated Annealing, MaxWalkSat and Differential Evolution help us in finding the most optimal solution  in an efficient manner. Conventional methods arrive at optimal solution by compairng all the possible candidate solutions, which grow exponentially with the size of the data.This work presents a comparison of the performace of the three optimizers Simulated Annealing, MaxWalkSat and Differential Evolution. The model used for the project was DTLZ7. To evaluate the performance of the optimizers against one another, statistical machinery like Scott-Knott, a12, bootstrap were used.
 
-## II. Background:   
+## II. Background and Implementation:   
 
 #### Simulated Annealing
 Simulated annealing (SA) is a method for solving unconstrained and bound-constrained optimization problems. The method models the physical process of heating a material and then slowly lowering the temperature to decrease defects, thus minimizing the system energy.<br>
@@ -133,7 +133,7 @@ We observe that MaxWalkSat performs better than the other optimizers.
 
 ## IV. Threats to validity:
 
-The ranking of optimizers might change if models other than DTLZ7 are used. The number of iterations used might also affect the raking of the optimizers. The current results man not hold for some cases  where certain optimizers perform better.
+The ranking of optimizers might change if models other than DTLZ7 are used. The number of iterations used might also affect the raking of the optimizers. The current results may not hold for some cases  where certain optimizers perform better.
 
 
 ## V. Future Work:
