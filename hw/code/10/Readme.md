@@ -47,7 +47,7 @@ DE optimizes a problem by maintaining a population of candidate solutions and cr
 
 ## IV. Results: 
 
-Parameters of GA were tuned using DE such that hypervolume of GA is maximized.  The results below show the hyper volume measures for the tuned GA.
+Parameters of GA were tuned using DE such that hypervolume of GA is maximized.  The results below show the best solution which is the set of optimized parameters for GA.
 
 ![res1](./imgs/res1.PNG)
  
