@@ -45,6 +45,14 @@ DE optimizes a problem by maintaining a population of candidate solutions and cr
     * When there is no improvement in the era from the previous era
     * maximum tries reached
 
+* comparing the results
+* For settings of tuned and untuned
+   * Model - DTLZ7, using objectives - 2 and decision - 10
+      * Repeat 20 times
+         * GA with settings, return frontier
+         * calculate hypervolume from the frontier
+   * Statistical Analysis of Scott-Knott,a12 and rank it
+
 ## IV. Results: 
 
 Parameters of GA were tuned using DE such that hypervolume of GA is maximized.  The results below show the best solution which is the set of optimized parameters for GA.
