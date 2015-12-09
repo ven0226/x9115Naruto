@@ -1,396 +1,66 @@
-min =  16.0714761984
-max =  1380.37505773
-# Repeat: 0
-Generations :  15
-Best Solution :  284.827873344
-energy =  284.827873344
-norm 0.19699163792
-# Runtime: 5.096 secs
-# Repeat: 1
-Generations :  11
-Best Solution :  325.131428729
-energy =  325.131428729
-norm 0.22653312409
-# Runtime: 5.080 secs
-# Repeat: 2
-Generations :  16
-Best Solution :  298.052760489
-energy =  298.052760489
-norm 0.206685145527
-# Runtime: 9.296 secs
-# Repeat: 3
-Generations :  12
-Best Solution :  389.972820882
-energy =  389.972820882
-norm 0.274060223652
-# Runtime: 8.456 secs
-==================================================
+Name: DTLZ1-2-10-PF-0 HyperVolume: 3.32747979431e+35
+Name: DTLZ1-2-10-PF-1 HyperVolume: 3.49738484158e+35
+Name: DTLZ1-2-10-PF-2 HyperVolume: 3.39253516051e+35
+Name: DTLZ1-2-10-PF-3 HyperVolume: 3.45864020845e+35
+Name: DTLZ1-2-10-PF-4 HyperVolume: 3.61435035517e+35
+Name: DTLZ1-2-20-PF-0 HyperVolume: 5.066437015e+35
+Name: DTLZ1-2-20-PF-1 HyperVolume: 3.87853699775e+35
+Name: DTLZ1-2-20-PF-2 HyperVolume: 4.80361424595e+35
+Name: DTLZ1-2-20-PF-3 HyperVolume: 5.04628278575e+35
+Name: DTLZ1-2-20-PF-4 HyperVolume: 4.49086665718e+35
+Name: DTLZ1-2-40-PF-0 HyperVolume: 6.31051754292e+35
+Name: DTLZ1-2-40-PF-1 HyperVolume: 5.76816527453e+35
+Name: DTLZ1-2-40-PF-2 HyperVolume: 6.81292639524e+35
+Name: DTLZ1-2-40-PF-3 HyperVolume: 1.53789775235e+36
+Name: DTLZ1-2-40-PF-4 HyperVolume: 1.06619264045e+36
 
-Starting Model = DTLZ1 Optimizer = GA No. of Decision = 10 No. of Objectives = 2 
 
-# Average: 8.456 secs
-# Average Energy: 2.26068e-01 
-==================================================
-min =  39.1781579292
-max =  3323.30310951
-# Repeat: 0
-Generations :  13
-Best Solution :  703.437071286
-energy =  703.437071286
-norm 0.20226359324
-# Runtime: 15.490 secs
-# Repeat: 1
-Generations :  11
-Best Solution :  855.423629331
-energy =  855.423629331
-norm 0.248542757488
-# Runtime: 15.793 secs
-# Repeat: 2
-Generations :  16
-Best Solution :  827.265430621
-energy =  827.265430621
-norm 0.239968723575
-# Runtime: 26.863 secs
-# Repeat: 3
-Generations :  13
-Best Solution :  867.757173621
-energy =  867.757173621
-norm 0.252298261457
-# Runtime: 25.042 secs
-==================================================
+Name: DTLZ1-4-10-PF-0 HyperVolume: 5.9473185912e+62
+Name: DTLZ1-4-10-PF-1 HyperVolume: 4.67598758181e+60
+Name: DTLZ1-4-10-PF-2 HyperVolume: 1.82310098786e+61
+Name: DTLZ1-4-10-PF-3 HyperVolume: 1.67986204524e+62
+Name: DTLZ1-4-10-PF-4 HyperVolume: 1.68193596805e+63
+Name: DTLZ1-4-20-PF-0 HyperVolume: 1.61090550056e+62
+Name: DTLZ1-4-20-PF-1 HyperVolume: 2.44085668869e+63
+Name: DTLZ1-4-20-PF-2 HyperVolume: 5.02138771935e+62
+Name: DTLZ1-4-20-PF-3 HyperVolume: 6.06330415067e+63
+Name: DTLZ1-4-20-PF-4 HyperVolume: 4.01151341451e+63
+Name: DTLZ1-4-40-PF-0 HyperVolume: 4.98178346614e+64
+Name: DTLZ1-4-40-PF-1 HyperVolume: 7.87164092008e+63
+Name: DTLZ1-4-40-PF-2 HyperVolume: 6.04951074383e+63
+Name: DTLZ1-4-40-PF-3 HyperVolume: 1.31656457526e+65
+Name: DTLZ1-4-40-PF-4 HyperVolume: 1.11257902457e+64
 
-Starting Model = DTLZ1 Optimizer = GA No. of Decision = 20 No. of Objectives = 2 
 
-# Average: 25.042 secs
-# Average Energy: 2.35768e-01 
-==================================================
-min =  110.618853478
-max =  6701.8326976
-# Repeat: 0
-Generations :  15
-Best Solution :  1662.04247974
-energy =  1662.04247974
-norm 0.235377528776
-# Runtime: 43.373 secs
-# Repeat: 1
-Generations :  13
-Best Solution :  1745.11944815
-energy =  1745.11944815
-norm 0.247981727392
-# Runtime: 44.539 secs
-# Repeat: 2
-Generations :  12
-Best Solution :  2142.51312248
-energy =  2142.51312248
-norm 0.308273152269
-# Runtime: 46.401 secs
-# Repeat: 3
-Generations :  14
-Best Solution :  1960.51870137
-energy =  1960.51870137
-norm 0.280661482338
-# Runtime: 61.085 secs
-==================================================
+Name: DTLZ1-6-10-PF-0 HyperVolume: 1.34548356172e+89
+Name: DTLZ1-6-10-PF-1 HyperVolume: 2.34210489933e+89
+Name: DTLZ1-6-10-PF-2 HyperVolume: 1.6599891828e+89
+Name: DTLZ1-6-10-PF-3 HyperVolume: 2.141156292e+91
+Name: DTLZ1-6-10-PF-4 HyperVolume: 1.70456798289e+89
+Name: DTLZ1-6-20-PF-0 HyperVolume: 2.32531305276e+89
+Name: DTLZ1-6-20-PF-1 HyperVolume: 7.03613359027e+88
+Name: DTLZ1-6-20-PF-2 HyperVolume: 1.1192186461e+88
+Name: DTLZ1-6-20-PF-3 HyperVolume: 1.20107626175e+92
+Name: DTLZ1-6-20-PF-4 HyperVolume: 4.00113276769e+91
+Name: DTLZ1-6-40-PF-0 HyperVolume: 7.57224185459e+91
+Name: DTLZ1-6-40-PF-1 HyperVolume: 1.76359926961e+91
+Name: DTLZ1-6-40-PF-2 HyperVolume: 9.11945403402e+91
+Name: DTLZ1-6-40-PF-3 HyperVolume: 1.73090606592e+91
+Name: DTLZ1-6-40-PF-4 HyperVolume: 2.50179085793e+92
 
-Starting Model = DTLZ1 Optimizer = GA No. of Decision = 40 No. of Objectives = 2 
 
-# Average: 61.085 secs
-# Average Energy: 2.68073e-01 
-==================================================
-min =  -867.968011287
-max =  6201.56615818
-# Repeat: 0
-Generations :  11
-Best Solution :  1041.13177087
-energy =  1041.13177087
-norm 0.270046050616
-# Runtime: 50.938 secs
-# Repeat: 1
-Generations :  12
-Best Solution :  1028.27884944
-energy =  1028.27884944
-norm 0.268227978714
-# Runtime: 57.236 secs
-# Repeat: 2
-Generations :  11
-Best Solution :  1094.41478707
-energy =  1094.41478707
-norm 0.277583041728
-# Runtime: 54.184 secs
-# Repeat: 3
-Generations :  11
-Best Solution :  1078.18223242
-energy =  1078.18223242
-norm 0.275286913827
-# Runtime: 55.112 secs
-==================================================
-
-Starting Model = DTLZ1 Optimizer = GA No. of Decision = 10 No. of Objectives = 4 
-
-# Average: 55.112 secs
-# Average Energy: 2.72786e-01 
-==================================================
-min =  68.7860583633
-max =  6327.99641419
-# Repeat: 0
-Generations :  11
-Best Solution :  1806.14011415
-energy =  1806.14011415
-norm 0.277567609494
-# Runtime: 60.434 secs
-# Repeat: 1
-Generations :  11
-Best Solution :  1779.49474534
-energy =  1779.49474534
-norm 0.273310623821
-# Runtime: 63.203 secs
-# Repeat: 2
-Generations :  11
-Best Solution :  1814.06229735
-energy =  1814.06229735
-norm 0.278833293621
-# Runtime: 66.698 secs
-# Repeat: 3
-Generations :  11
-Best Solution :  1612.18671168
-energy =  1612.18671168
-norm 0.246580729129
-# Runtime: 68.863 secs
-==================================================
-
-Starting Model = DTLZ1 Optimizer = GA No. of Decision = 20 No. of Objectives = 4 
-
-# Average: 68.863 secs
-# Average Energy: 2.69073e-01 
-==================================================
-min =  185.973274513
-max =  11516.2489735
-# Repeat: 0
-Generations :  11
-Best Solution :  2961.97098789
-energy =  2961.97098789
-norm 0.245007075478
-# Runtime: 79.570 secs
-# Repeat: 1
-Generations :  11
-Best Solution :  3020.72251149
-energy =  3020.72251149
-norm 0.250192432407
-# Runtime: 84.912 secs
-# Repeat: 2
-Generations :  11
-Best Solution :  3023.31753919
-energy =  3023.31753919
-norm 0.250421467231
-# Runtime: 90.422 secs
-# Repeat: 3
-Generations :  11
-Best Solution :  2698.15712376
-energy =  2698.15712376
-norm 0.221723099771
-# Runtime: 95.312 secs
-==================================================
-
-Starting Model = DTLZ1 Optimizer = GA No. of Decision = 40 No. of Objectives = 4 
-
-# Average: 95.312 secs
-# Average Energy: 2.41836e-01 
-==================================================
-min =  91.4578725453
-max =  10184.8452728
-# Repeat: 0
-Generations :  10
-Best Solution :  2039.85089794
-energy =  2039.85089794
-norm 0.193036584066
-# Runtime: 90.078 secs
-# Repeat: 1
-Generations :  12
-Best Solution :  2001.6624449
-energy =  2001.6624449
-norm 0.189253071997
-# Runtime: 109.397 secs
-# Repeat: 2
-Generations :  12
-Best Solution :  2075.95478728
-energy =  2075.95478728
-norm 0.196613568473
-# Runtime: 111.142 secs
-# Repeat: 3
-Generations :  11
-Best Solution :  2325.23394031
-energy =  2325.23394031
-norm 0.221310842355
-# Runtime: 102.685 secs
-==================================================
-
-Starting Model = DTLZ1 Optimizer = GA No. of Decision = 10 No. of Objectives = 6 
-
-# Average: 102.685 secs
-# Average Energy: 2.00054e-01 
-==================================================
-min =  316.129514927
-max =  10557.6492805
-# Repeat: 0
-Generations :  11
-Best Solution :  2661.32176595
-energy =  2661.32176595
-norm 0.228988695495
-# Runtime: 108.415 secs
-# Repeat: 1
-Generations :  10
-Best Solution :  2955.658148
-energy =  2955.658148
-norm 0.25772821744
-# Runtime: 101.076 secs
-# Repeat: 2
-Generations :  11
-Best Solution :  2657.84648477
-energy =  2657.84648477
-norm 0.22864936293
-# Runtime: 113.608 secs
-# Repeat: 3
-Generations :  11
-Best Solution :  3196.39307413
-energy =  3196.39307413
-norm 0.281233998969
-# Runtime: 116.712 secs
-==================================================
-
-Starting Model = DTLZ1 Optimizer = GA No. of Decision = 20 No. of Objectives = 6 
-
-# Average: 116.712 secs
-# Average Energy: 2.49150e-01 
-==================================================
-min =  125.377146052
-max =  12701.6913087
-# Repeat: 0
-Generations :  12
-Best Solution :  3922.27336152
-energy =  3922.27336152
-norm 0.301908505654
-# Runtime: 138.764 secs
-# Repeat: 1
-Generations :  13
-Best Solution :  3820.09376319
-energy =  3820.09376319
-norm 0.293783740559
-# Runtime: 156.184 secs
-# Repeat: 2
-Generations :  11
-Best Solution :  3483.16461407
-energy =  3483.16461407
-norm 0.266992969848
-# Runtime: 137.535 secs
-# Repeat: 3
-Generations :  12
-Best Solution :  4888.05683998
-energy =  4888.05683998
-norm 0.378702347313
-# Runtime: 155.743 secs
-==================================================
-
-Starting Model = DTLZ1 Optimizer = GA No. of Decision = 40 No. of Objectives = 6 
-
-# Average: 155.743 secs
-# Average Energy: 3.10347e-01 
-==================================================
-min =  106.955492165
-max =  13003.4100966
-# Repeat: 0
-Generations :  12
-Best Solution :  3411.15082542
-energy =  3411.15082542
-norm 0.256209588962
-# Runtime: 160.528 secs
-# Repeat: 1
-Generations :  10
-Best Solution :  3479.88468164
-energy =  3479.88468164
-norm 0.26153925966
-# Runtime: 134.843 secs
-# Repeat: 2
-Generations :  11
-Best Solution :  3188.26003185
-energy =  3188.26003185
-norm 0.238926482836
-# Runtime: 148.896 secs
-# Repeat: 3
-Generations :  10
-Best Solution :  2856.94630098
-energy =  2856.94630098
-norm 0.213236187244
-# Runtime: 137.065 secs
-==================================================
-
-Starting Model = DTLZ1 Optimizer = GA No. of Decision = 10 No. of Objectives = 8 
-
-# Average: 137.065 secs
-# Average Energy: 2.42478e-01 
-==================================================
-min =  327.183046252
-max =  12815.0280006
-# Repeat: 0
-Generations :  11
-Best Solution :  3412.72410544
-energy =  3412.72410544
-norm 0.247083549681
-# Runtime: 155.697 secs
-# Repeat: 1
-Generations :  10
-Best Solution :  4500.43692185
-energy =  4500.43692185
-norm 0.334185273027
-# Runtime: 144.659 secs
-# Repeat: 2
-Generations :  11
-Best Solution :  3977.47484483
-energy =  3977.47484483
-norm 0.292307584849
-# Runtime: 161.670 secs
-# Repeat: 3
-Generations :  11
-Best Solution :  4448.97144414
-energy =  4448.97144414
-norm 0.330064027296
-# Runtime: 163.647 secs
-==================================================
-
-Starting Model = DTLZ1 Optimizer = GA No. of Decision = 20 No. of Objectives = 8 
-
-# Average: 163.647 secs
-# Average Energy: 3.00910e-01 
-==================================================
-min =  187.185766571
-max =  14831.9496894
-# Repeat: 0
-Generations :  11
-Best Solution :  4938.15626351
-energy =  4938.15626351
-norm 0.324414276801
-# Runtime: 174.699 secs
-# Repeat: 1
-Generations :  11
-Best Solution :  4721.44782007
-energy =  4721.44782007
-norm 0.309616602726
-# Runtime: 180.399 secs
-# Repeat: 2
-Generations :  14
-Best Solution :  4957.74570583
-energy =  4957.74570583
-norm 0.325751918188
-# Runtime: 236.657 secs
-# Repeat: 3
-Generations :  11
-Best Solution :  6412.92547681
-energy =  6412.92547681
-norm 0.425117109641
-# Runtime: 191.001 secs
-==================================================
-
-Starting Model = DTLZ1 Optimizer = GA No. of Decision = 40 No. of Objectives = 8 
-
-# Average: 191.001 secs
-# Average Energy: 3.46225e-01 
-==================================================
+Name: DTLZ1-8-10-PF-0 HyperVolume: 4.60962750992e+124
+Name: DTLZ1-8-10-PF-1 HyperVolume: 2.5378592726e+123
+Name: DTLZ1-8-10-PF-2 HyperVolume: 2.71837372575e+118
+Name: DTLZ1-8-10-PF-3 HyperVolume: 9.26523824413e+117
+Name: DTLZ1-8-10-PF-4 HyperVolume: 4.56801071934e+117
+Name: DTLZ1-8-20-PF-0 HyperVolume: 1.13532321382e+126
+Name: DTLZ1-8-20-PF-1 HyperVolume: 9.03476637484e+138
+Name: DTLZ1-8-20-PF-2 HyperVolume: 1.32576060665e+137
+Name: DTLZ1-8-20-PF-3 HyperVolume: 7.74332525877e+125
+Name: DTLZ1-8-20-PF-4 HyperVolume: 1.19293537332e+115
+Name: DTLZ1-8-40-PF-0 HyperVolume: 4.08813412286e+132
+Name: DTLZ1-8-40-PF-1 HyperVolume: 6.61730560151e+138
+Name: DTLZ1-8-40-PF-2 HyperVolume: 1.19351085352e+133
+Name: DTLZ1-8-40-PF-3 HyperVolume: 3.20192161003e+144
+Name: DTLZ1-8-40-PF-4 HyperVolume: 3.42579821839e+132
