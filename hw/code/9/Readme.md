@@ -7,6 +7,15 @@ Genetic algorithm is a search heuristic that mimics the process of natural selec
 
 ## Introduction:   
 
+A genetic algorithm is a method for solving both constrained and unconstrained optimization problems based on a natural selection process that mimics biological evolution. The algorithm repeatedly modifies a population of individual solutions. At each step, the genetic algorithm randomly selects individuals from the current population and uses them as parents to produce the children for the next generation. Over successive generations, the population "evolves" toward an optimal solution.
+
+We can apply the genetic algorithm to solve problems that are not well suited for standard optimization algorithms, including problems in which the objective function is discontinuous, nondifferentiable, stochastic, or highly nonlinear.
+
+The genetic algorithm differs from a classical, derivative-based, optimization algorithm in the following two main ways:
+
+* Generates a population of points at each iteration.
+* Selects the next population by computation which uses random number generators.
+
 ### Algorithm of GA:
 
 ```
