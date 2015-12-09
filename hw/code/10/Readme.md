@@ -80,7 +80,7 @@ The above results show that DE has succesfully tuned GA such that hypervolumed i
 
 Below is the Scott-Knott plot for the tuned and untuned GAs using DTLZ7 with 2 objectives and 10 decisions.
 
-![res2](./imgs/res2.PNG)
+![res2](./imgs/res2.png)
  
  
 ## V. Threats to validity:
