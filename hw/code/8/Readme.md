@@ -133,9 +133,13 @@ We observe that MaxWalkSat performs better than the other optimizers.
 
 ## IV. Threats to validity:
 
-The ranking of optimizers might change if models other than DTLZ7 are used. The number of iterations used might also affect the raking of the optimizers. The current results may not hold for some cases  where certain optimizers perform better.
+* The ranking of optimizers might change if models other than DTLZ7 are used. 
+* The number of iterations used might also affect the raking of the optimizers. 
+* The current results may not hold for some cases  where certain optimizers perform better.
 
 
 ## V. Future Work:
 
-The experiment is currently run on only one model DTLZ7. Running it on other models would give clearer insights into the perofrmance of these optimizers. Comparison techniques other than binary domination can be used to compare models. Improving the efficiency of type 1, type 2 and type 3 comparisons.
+* The experiment is currently run on only one model DTLZ7. Running it on other models would give clearer insights into the perofrmance of these optimizers. 
+* Comparison techniques other than binary domination can be used to compare models. 
+* Improving the efficiency of type 1, type 2 and type 3 comparisons.
