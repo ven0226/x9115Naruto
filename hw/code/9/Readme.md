@@ -2,10 +2,10 @@
 
 #A Simple Standard Genetic Algorithm  
 
-## Abstract:   
+## I. Abstract:   
 Genetic algorithm is a search heuristic that mimics the process of natural selection. It is routinely used to generate useful solutions to optimization and search problems. We compare the performance results of DTLZ1, DTLZ3, DTLZ5 and DTLZ7 using Genetic algorithms with various objectives and decisions.
 
-## Introduction:   
+## II. Introduction:   
 
 A genetic algorithm is a method for solving both constrained and unconstrained optimization problems based on a natural selection process that mimics biological evolution. The algorithm repeatedly modifies a population of individual solutions. At each step, the genetic algorithm randomly selects individuals from the current population and uses them as parents to produce the children for the next generation. Over successive generations, the population "evolves" toward an optimal solution.
 
@@ -39,7 +39,7 @@ repeat for i generations
             reduce lives
          If ran out of lives, terminate 
 ```
-## Implementation:  
+## III. Implementation:  
 
 The algorithm was  Setup with the following parameters:
 
@@ -54,7 +54,7 @@ The algorithm was  Setup with the following parameters:
  * early termination: life = 10, each new generation, if not better, life=life-1; else do nothing. Terminate when life = 0.
 
 
-## Results: 
+## IV. Results: 
 
 The results show the hyper volume values of frontiers for all the models under study:
  
@@ -95,16 +95,16 @@ Table : DTLZ7 Hypervolume
 |  8  | 1336.2828  | 3268.3843 | 3930.9786 |
 
 
-## Threat to Validity
+## V. Threat to Validity
 * Not enough repeats to test stability
 * No additional lives given if the objectives are better
 * Consideration of metrics other than Hyper volume could lead to different results
 
-## Future Work:
+## VI. Future Work:
 * Try other domination techniques other than binary domination
 * Improve the default parameters used for the GA
 * Try with different values of mutation and cross over
    
-## Appendix:
+## VII. Appendix:
 
 Detailed results are available [here](./Data)
