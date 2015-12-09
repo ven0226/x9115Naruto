@@ -52,7 +52,7 @@ class Utility:
     def write_to_file(mod,filename,frontier,min_objs,max_objs):
         #print max_objs
         #print min_objs
-        name='../Pareto_Fronts/'+filename
+        name='Pareto_Fronts/'+filename +".out"
         f=open(name,'w')
         i=0
 

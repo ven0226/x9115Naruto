@@ -49,7 +49,7 @@ class Utility:
     @staticmethod
     def check_type2(era,era_1):
         val  = a12(era,era_1)
-        if val > 0.54:
-            return 2
+        if val > 0.56:
+            return 5
         else:
             return -1

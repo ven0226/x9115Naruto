@@ -58,8 +58,8 @@ class Model:
         return sys.maxint,sys.maxint
 
     def baseline_objs(self):
-        min_objs = [sys.maxint]*self.no_decisions
-        max_objs = [-sys.maxint - 1]*self.no_decisions
+        min_objs = [sys.maxint]*self.no_objectives
+        max_objs = [-sys.maxint - 1]*self.no_objectives
         for i in xrange(1000):
             sn = self.generate()
             objectives = self.objs(sn)

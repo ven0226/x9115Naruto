@@ -75,5 +75,5 @@ if __name__ == '__main__':
                 print("# Average: %.3f secs" % (avg_time))
                 print("# Average Energy: %.5e " % (avg_energy))
                 print "="*50
-    
+
 '''

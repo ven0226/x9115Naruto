@@ -16,7 +16,7 @@ class GASetting(Model):
 
     def __init__(self):
         lo = [50,100,0.01]
-        hi = [150,300,0.15]
+        hi = [150,1000,0.15]
         for i in range(self.no_decisions):
             self.decisons.append(Decisions(lo[i],hi[i]))
 
