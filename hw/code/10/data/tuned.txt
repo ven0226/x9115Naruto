@@ -1,0 +1,44 @@
+Name: DTLZ7-2-10-PF-0.out HyperVolume: 1.8075
+Name: DTLZ7-2-10-PF-1.out HyperVolume: 1.8557
+Name: DTLZ7-2-10-PF-2.out HyperVolume: 1.7592
+Name: DTLZ7-2-10-PF-3.out HyperVolume: 1.8056
+Name: DTLZ7-2-20-PF-0.out HyperVolume: 1.7755
+Name: DTLZ7-2-20-PF-1.out HyperVolume: 1.8165
+Name: DTLZ7-2-20-PF-2.out HyperVolume: 1.8653
+Name: DTLZ7-2-20-PF-3.out HyperVolume: 1.8265
+Name: DTLZ7-2-40-PF-0.out HyperVolume: 1.8105
+Name: DTLZ7-2-40-PF-1.out HyperVolume: 1.8104
+Name: DTLZ7-2-40-PF-2.out HyperVolume: 1.807
+Name: DTLZ7-2-40-PF-3.out HyperVolume: 1.8412
+
+
+Name: DTLZ7-4-10-PF-0.out HyperVolume: 3.4809
+Name: DTLZ7-4-10-PF-1.out HyperVolume: 3.879
+Name: DTLZ7-4-10-PF-2.out HyperVolume: 3.6704
+Name: DTLZ7-4-10-PF-3.out HyperVolume: 3.5563
+Name: DTLZ7-4-20-PF-0.out HyperVolume: 3.6231
+Name: DTLZ7-4-20-PF-1.out HyperVolume: 3.8197
+Name: DTLZ7-4-20-PF-2.out HyperVolume: 3.4807
+Name: DTLZ7-4-20-PF-3.out HyperVolume: 3.9338
+Name: DTLZ7-4-40-PF-0.out HyperVolume: 3.5011
+Name: DTLZ7-4-40-PF-1.out HyperVolume: 3.4339
+Name: DTLZ7-4-40-PF-2.out HyperVolume: 3.4844
+Name: DTLZ7-4-40-PF-3.out HyperVolume: 3.5999
+
+
+Name: DTLZ7-6-10-PF-0.out HyperVolume: 8.047
+Name: DTLZ7-6-10-PF-1.out HyperVolume: 6.8338
+Name: DTLZ7-6-10-PF-2.out HyperVolume: 6.8571
+Name: DTLZ7-6-10-PF-3.out HyperVolume: 7.6202
+Name: DTLZ7-6-20-PF-0.out HyperVolume: 7.2705
+Name: DTLZ7-6-20-PF-1.out HyperVolume: 7.6937
+Name: DTLZ7-6-20-PF-2.out HyperVolume: 8.3463
+Name: DTLZ7-6-20-PF-3.out HyperVolume: 8.0644
+Name: DTLZ7-6-40-PF-0.out HyperVolume: 7.4743
+Name: DTLZ7-6-40-PF-1.out HyperVolume: 8.7696
+Name: DTLZ7-6-40-PF-2.out HyperVolume: 7.1963
+Name: DTLZ7-6-40-PF-3.out HyperVolume: 7.8456
+
+
+Name: DTLZ7-8-10-PF-0.out HyperVolume: 13.1789
+Name: DTLZ7-8-10-PF-1.out HyperVolume: 12.601

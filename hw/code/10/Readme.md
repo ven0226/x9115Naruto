@@ -19,7 +19,7 @@ The genetic algorithm differs from a classical, derivative-based, optimization a
 * Generates a population of points at each iteration.
 * Selects the next population by computation which uses random number generators.
 
-#### Differential Evolution
+#### Differential Evolution:
 
 Differential evolution optimizes a problem by iteratively trying to improve a candidate solution with regard to a given measure of quality. It makes few or no assumptions about the problem being optimized and can search very large spaces of candidate solutions. However, metaheuristics such as DE do not guarantee an optimal solution is ever found.
 
@@ -50,6 +50,30 @@ DE optimizes a problem by maintaining a population of candidate solutions and cr
 Parameters of GA were tuned using DE such that hypervolume of GA is maximized.  The results below show the best solution which is the set of optimized parameters for GA.
 
 ![res1](./imgs/res1.PNG)
+
+The table below shows the hyper volume measures for untuned and tuned GA for DTLZ7:
+ 
+|Objectives/Decisions   | Tuned |  Untuned | Better |
+|------------------------------|-----|-----|-----|
+|  2/10  | 1.8557 | 1.5375 | Tuned |
+|  2/20  | 1.8653 | 1.5471 | Tuned |
+|  2/40  | 1.8412 | 1.5379 | Tuned |
+|  4/10  |  3.879 | 3.6189 | Tuned |
+|  4/20  | 3.9338 | 3.538  | Tuned |
+|  4/40  | 3.5999 | 3.2992 | Tuned |
+|  6/10  |  8.047 | 6.89   | Tuned |
+|  6/20  | 8.3463 | 7.3447 | Tuned |
+|  6/40  | 8.7696 | 7.8138 | Tuned |
+|  8/10  | 13.1789 | 11.6865 | Tuned |
+
+The entire results are available inside the data folder.
+
+The above results show that DE has succesfully tuned GA such that hypervolumed is maximized.
+
+Below is the Scott-Knott plot for the tuned and untuned GAs using DTLZ7 with 2 objectives and 10 decisions.
+
+![res2](./imgs/res2.PNG)
+ 
  
 ## V. Threats to validity:
 
